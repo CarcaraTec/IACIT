@@ -7,6 +7,7 @@ Precisamos de um sistema que nos permita realizar a importação dos dados meteo
 
 ## Product Backlog
 ## Cards das sprints
+## Wireframe
 ## Burndown
 ## Modelagem
 ## Tecnologias
