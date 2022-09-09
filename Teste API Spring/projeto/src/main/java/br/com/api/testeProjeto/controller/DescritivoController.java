@@ -1,9 +1,7 @@
 package br.com.api.testeProjeto.controller;
 
 import br.com.api.testeProjeto.model.Descritivo;
-import br.com.api.testeProjeto.model.Estacao;
 import br.com.api.testeProjeto.service.DescritivoService;
-import br.com.api.testeProjeto.service.EstacaoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
