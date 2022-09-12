@@ -3,7 +3,7 @@
 ## Product Backlog
 ## Cards das sprints
 ## Wireframe
-## Modelagem
+![slide6](https://github.com/CarcaraTec/IACIT/blob/51b14bb4a6e4dbeff1f2a0a885d3430baa779360/Apresentacao/Modelagem.png)
 ## Burndown
 ![slide8](https://github.com/CarcaraTec/IACIT/blob/d7dd29448a00c91a40df95e0fab93b6b6597fa63/Apresentacao/Equipe.png)
 ## Tecnologias
