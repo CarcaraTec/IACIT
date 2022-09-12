@@ -8,7 +8,8 @@
 ## Wireframe
 ## Modelagem
 ## Burndown
-## Integrantes
+
+![slide8](https://github.com/CarcaraTec/IACIT/blob/d7dd29448a00c91a40df95e0fab93b6b6597fa63/Apresentacao/Equipe.png)
 ## Tecnologias
 
 - `Java Spring`
