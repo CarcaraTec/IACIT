@@ -67,6 +67,8 @@ public class Descritivo {
     @Column(name = "data_hora")
     private String data_hora;
 
+    @Column(name = "fk_estacao_id_estacao")
+    private String id_estacao;
 
     //Getters e Setters dos atributos
 
@@ -220,5 +222,13 @@ public class Descritivo {
 
     public void setData_hora(String data_hora) {
         this.data_hora = data_hora;
+    }
+
+    public String getId_estacao() {
+        return id_estacao;
+    }
+
+    public void setId_estacao(String id_estacao) {
+        this.id_estacao = id_estacao;
     }
 }
