@@ -3,8 +3,6 @@
   
 ![slide2](https://github.com/CarcaraTec/IACIT/blob/3efdf30029d9989de9b39271a72555c7acc182fd/Apresentacao/Objetivo.png)
 
-Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes 
-
 ## Product Backlog
 ## Cards das sprints
 ## Wireframe
