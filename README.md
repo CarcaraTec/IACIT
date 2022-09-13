@@ -11,6 +11,8 @@
 - `Java Spring`
 - `PostgreSQL`
 - `HTML 5`
+- `CSS`
 - `Discord`
+
 
   
