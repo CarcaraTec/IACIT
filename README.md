@@ -5,11 +5,11 @@
 </p>
 
 ## Objetivo
-Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes
+Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
 ## Product Backlog
 ![slide3](https://github.com/CarcaraTec/IACIT/blob/9cc5f7d112aa1dbdcafd324183f230080d0c9c56/Apresentacao/Product%20Backlog.png)
-## Cards das sprints
+## Proposta de Entrega
 ## Wireframe
 ![slide6](https://github.com/CarcaraTec/IACIT/blob/51b14bb4a6e4dbeff1f2a0a885d3430baa779360/Apresentacao/Modelagem.png)
 ## Burndown
