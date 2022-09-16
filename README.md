@@ -11,7 +11,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 ![slide3](https://github.com/CarcaraTec/IACIT/blob/9cc5f7d112aa1dbdcafd324183f230080d0c9c56/Apresentacao/Product%20Backlog.png)
 
 ## Proposta de Entrega
-![slide4](https://github.com/CarcaraTec/IACIT/blob/1403cc8df0c46f0f8c43aa6f0e793a5ce124ce99/Apresentacao/cards.png)
+![slide4](https://github.com/CarcaraTec/IACIT/blob/03be970cdb9e481a65e6de3bf081c93ef433a3e8/Apresentacao/Cards.png)
 ## Wireframe
 
 ## DER
