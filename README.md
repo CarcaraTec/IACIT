@@ -1,4 +1,4 @@
-![slide1](https://github.com/CarcaraTec/IACIT/blob/364938a6472f4f62506d315496607440e96b8e3c/Apresentacao/API%20IACIT.png)
+![slide1](https://github.com/CarcaraTec/IACIT/blob/d0dfc7916dbcba8dd33ff813b087f2167b0b7db8/Apresentacao/API%20IACIT.png)
 ![slide2](https://github.com/CarcaraTec/IACIT/blob/3efdf30029d9989de9b39271a72555c7acc182fd/Apresentacao/Objetivo.png)
 ![slide3](https://github.com/CarcaraTec/IACIT/blob/73c6c5e4427a24db4232a89d56a1b80fcd0d9d9c/Apresentacao/Product%20Backlog.png)
 ## Cards das sprints
