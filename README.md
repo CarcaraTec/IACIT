@@ -15,7 +15,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 ## Wireframe
 
 ## DER
-![slide6](https://github.com/CarcaraTec/IACIT/blob/51b14bb4a6e4dbeff1f2a0a885d3430baa779360/Apresentacao/Modelagem.png)
+![slide6](https://github.com/CarcaraTec/IACIT/blob/801cc4365d1fd6dda8d0b8da96806bfc1451aa90/Apresentacao/Modelagem.png)
 
 ## Burndown
 ## Equipe
