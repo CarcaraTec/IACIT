@@ -1,6 +1,12 @@
 ![slide1](https://github.com/CarcaraTec/IACIT/blob/d0dfc7916dbcba8dd33ff813b087f2167b0b7db8/Apresentacao/API%20IACIT.png)
+
+<p align="center">
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
+
 ## Objetivo
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes
+
 ## Product Backlog
 ![slide3](https://github.com/CarcaraTec/IACIT/blob/9cc5f7d112aa1dbdcafd324183f230080d0c9c56/Apresentacao/Product%20Backlog.png)
 ## Cards das sprints
