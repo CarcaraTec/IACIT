@@ -15,7 +15,8 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 ## Wireframe
 ![slide6](https://github.com/CarcaraTec/IACIT/blob/51b14bb4a6e4dbeff1f2a0a885d3430baa779360/Apresentacao/Modelagem.png)
 ## Burndown
-![slide8](https://github.com/CarcaraTec/IACIT/blob/d7dd29448a00c91a40df95e0fab93b6b6597fa63/Apresentacao/Equipe.png)
+## Equipe
+![slide8](https://github.com/CarcaraTec/IACIT/blob/0fd88f9531d908bbac4b1f549a502565b73f96f3/Apresentacao/Equipe.png)
 ## Tecnologias
 
 - `Java Spring`
