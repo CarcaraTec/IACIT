@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Estacao</title>
+</head>
+<body>
+    <H1>Estação</H1>
+    <table>
+        <tr th:each = "estacao : ${estacoes}">
+            <td th:text = "${estacao.id_estacao}"></td>
+            <td th:text = "${estacao.codigo}"></td>
+            <td th:text = "${estacao.nome}"></td>
+            <td th:text = "${estacao.latitude}"></td>
+            <td th:text = "${estacao.longitude}"></td>
+            <td th:text = "${estacao.altitude}"></td>
+            <td th:text = "${estacao.data_fundacao}"></td>
+            <td th:text = "${estacao.unidade_federativa}"></td>
+        </tr>
+</table>
+</body>
+</html>
