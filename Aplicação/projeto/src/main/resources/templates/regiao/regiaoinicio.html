@@ -6,7 +6,11 @@
 </head>
 <body>
 <H1>Região</H1>
-<table>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>Nome</th>
+    </tr>
     <tr th:each = "regiao : ${regioes}">
         <td th:text = "${regiao.id_regiao}"></td>
         <td th:text = "${regiao.nome_regiao}"></td>

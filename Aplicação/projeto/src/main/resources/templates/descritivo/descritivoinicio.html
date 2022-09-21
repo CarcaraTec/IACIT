@@ -6,28 +6,28 @@
 </head>
 <body>
 <H1>Descritivo</H1>
-<table>
+<table border="1">
     <tr>
-        <th>id_descritivo</th>
-        <th>precipitacao</th>
-        <th>pressão atm horario</th>
-        <th>pressao atm max hora ant</th>
-        <th>pressão atm min hora ant</th>
-        <th>radiação</th>
-        <th>temp ar seco</th>
-        <th>temp orvalho</th>
-        <th>temp max hora ant</th>
-        <th>temp min hora ant</th>
-        <th>temp orv max hora ant</th>
-        <th>temp orv min hora ant</th>
-        <th>umid rel max hora ant</th>
-        <th>umid rel min hora ant</th>
-        <th>umid rel horaria</th>
-        <th>vento horaria</th>
-        <th>vento rajada max</th>
-        <th>vento vel hor</th>
+        <th>id</th>
+        <th>Precipitação Total</th>
+        <th>Pressão ATM hor</th>
+        <th>Pressão ATM Máx hora ant</th>
+        <th>Pressão ATM Mín hora ant</th>
+        <th>Radiação Global</th>
+        <th>Temp Ar Seco</th>
+        <th>Temp Orvalho</th>
+        <th>Temp Máx hora ant</th>
+        <th>Temp Mín hora ant</th>
+        <th>Temp Orvalho Máx hora ant</th>
+        <th>Temp Orvalho Mín hora ant</th>
+        <th>Umid Rel Máx hora ant</th>
+        <th>Umid Rel Mín hora ant</th>
+        <th>Umid Rel hor</th>
+        <th>Vento horaria</th>
+        <th>Vento Rajada Máx</th>
+        <th>Vento Vel hor</th>
         <th>data_hora</th>
-        <th>estacao</th>
+        <th>estação</th>
     </tr>
     <tr th:each = "descritivo : ${descritivos}">
         <td th:text = "${descritivo.id_descritivo}"></td>
