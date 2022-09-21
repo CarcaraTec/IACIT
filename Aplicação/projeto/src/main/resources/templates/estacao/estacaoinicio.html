@@ -6,7 +6,17 @@
 </head>
 <body>
     <H1>Estação</H1>
-    <table>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Altitude</th>
+            <th>Data de Fundação</th>
+            <th>UF</th>
+        </tr>
         <tr th:each = "estacao : ${estacoes}">
             <td th:text = "${estacao.id_estacao}"></td>
             <td th:text = "${estacao.codigo}"></td>
