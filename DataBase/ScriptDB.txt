@@ -1,0 +1,142 @@
+CREATE TABLE regiao (
+    regiao_id serial,
+    nome_regiao VARCHAR,
+    CONSTRAINT pk_regiao_id PRIMARY KEY (regiao_id),
+    CONSTRAINT unique_regiao UNIQUE (nome_regiao)
+);
+CREATE TABLE estado (
+    estado_id serial,
+    nome_estado VARCHAR,
+    fk_regiao_nome_regiao VARCHAR,
+    CONSTRAINT pk_estado_id PRIMARY KEY (estado_id),
+    CONSTRAINT fk_estado FOREIGN KEY (fk_regiao_nome_regiao)
+               REFERENCES regiao (nome_regiao),
+    CONSTRAINT unique_estado UNIQUE (nome_estado)
+);
+
+CREATE TABLE estacao (
+    nome_estacao VARCHAR,
+    cod_wmo VARCHAR,
+    latitude NUMERIC,
+    longitude VARCHAR,
+    altitude NUMERIC,
+    data_fundacao DATE,
+    fk_estado_nome_estado VARCHAR,
+    CONSTRAINT pk_cod_wmo PRIMARY KEY (cod_wmo),
+    CONSTRAINT fk_estacao FOREIGN KEY (fk_estado_nome_estado)
+               REFERENCES estado (nome_estado)
+	
+);
+
+CREATE TABLE precipitacao (
+    prec_id serial,
+    prec_data DATE,
+    prec_hora TIME,
+    prec_total NUMERIC,
+    fk_estacao_cod_wmo VARCHAR,
+    CONSTRAINT pk_prec_id PRIMARY KEY (prec_id),
+    CONSTRAINT fk_precipitacao FOREIGN KEY (fk_estacao_cod_wmo)
+               REFERENCES estacao (cod_wmo)
+);
+
+CREATE TABLE pressao_atmosferica (
+    pre_atm_id serial,
+    pre_data DATE,
+    pre_hora TIME,
+    pre_atm_estacao NUMERIC,
+    pre_atm_max NUMERIC,
+    pre_atm_min NUMERIC,
+    fk_estacao_cod_wmo VARCHAR,
+    CONSTRAINT pk_pre_atm_id PRIMARY KEY (pre_atm_id),
+    CONSTRAINT fk_pressao_atmosferica FOREIGN KEY (fk_estacao_cod_wmo)
+               REFERENCES estacao (cod_wmo)
+);
+
+CREATE TABLE radiacao_global (
+    rad_id serial,
+    rad_data DATE,
+    rad_hora TIME,
+    rad_global NUMERIC,
+    fk_estacao_cod_wmo VARCHAR,
+    CONSTRAINT pk_rad_id PRIMARY KEY (rad_id),
+    CONSTRAINT fk_radiacao_global FOREIGN KEY (fk_estacao_cod_wmo)
+               REFERENCES estacao (cod_wmo)
+);
+
+CREATE TABLE temperatura (
+    temp_id serial,
+    temp_data DATE,
+    temp_hora TIME,
+    temp_ar NUMERIC,
+    temp_ponto_orvalho NUMERIC,
+    temp_max NUMERIC,
+    temp_min NUMERIC,
+    temp_orvalho_max NUMERIC,
+    temp_orvalho_min NUMERIC,
+    fk_estacao_cod_wmo VARCHAR,
+    CONSTRAINT pk_temp_id PRIMARY KEY (temp_id),
+    CONSTRAINT fk_temperatura FOREIGN KEY (fk_estacao_cod_wmo)
+               REFERENCES estacao (cod_wmo)
+);
+
+CREATE TABLE umidade (
+    umi_id serial,
+    umi_data DATE,
+    umi_hora TIME,
+    umi_rel_max NUMERIC,
+    umi_rel_min NUMERIC,
+    umi_rel_ar NUMERIC,
+    fk_estacao_cod_wmo VARCHAR,
+    CONSTRAINT pk_umi_id PRIMARY KEY (umi_id),
+    CONSTRAINT fk_umidade FOREIGN KEY (fk_estacao_cod_wmo)
+               REFERENCES estacao (cod_wmo)
+);
+
+CREATE TABLE vento (
+    ven_id serial,
+    ven_data DATE,
+    ven_hora TIME,
+    ven_direcao_hor NUMERIC,
+    ven_rajada_max NUMERIC,
+    ven_velocidade_hor NUMERIC,
+    fk_estacao_cod_wmo VARCHAR,
+    CONSTRAINT pk_ven_id PRIMARY KEY (ven_id),
+    CONSTRAINT fk_vento FOREIGN KEY (fk_estacao_cod_wmo)
+               REFERENCES estacao (cod_wmo)
+);
+
+--REGIOES
+insert into regiao (nome_regiao) values ('CO');
+insert into regiao (nome_regiao) values ('N');
+insert into regiao (nome_regiao) values ('NE');
+insert into regiao (nome_regiao) values ('S');
+insert into regiao (nome_regiao) values ('SE');
+
+--ESTADOS
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('AC', 'N');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('AL', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('AP', 'N');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('AM', 'N');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('BA', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('CE', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('DF', 'CO');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('ES', 'SE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('GO', 'CO');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('MA', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('MT', 'CO');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('MS', 'CO');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('MG', 'SE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('PA', 'N');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('PB', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('PR', 'S');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('PE', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('PI', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('RJ', 'SE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('RN', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('RS', 'S');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('RO', 'N');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('RR', 'N');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('SC', 'S');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('SP', 'SE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('SE', 'NE');
+insert into estado (nome_estado, fk_regiao_nome_regiao) values ('TO', 'N');
