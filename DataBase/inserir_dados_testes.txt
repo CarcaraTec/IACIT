@@ -1,0 +1,136 @@
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('VITORIA', 'A612', -20.27083332, -40.30583333, 9, '31/10/2006', 'ES', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('BARBACENA', 'A502', -21.22833332, -43.76777777, 1168.76, '05/12/2002', 'MG', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('SEROPEDICA-ECOLOGIA AGRICOLA', 'A601', -22.75777777, -43.68472221, 35, '24/05/2000', 'RJ', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('SAO PAULO - MIRANTE', 'A701', -23.496294, -46.620088, 785.64, '25/07/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('BAURU', 'A705', -22.358052, -49.028877, 636.17, '30/08/2001', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('CAMPOS DO JORDAO', 'A706', -22.75027777, -45.60388888, 1662.95, '13/03/2002', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('PRESIDENTE PRUDENTE', 'A707', -22.119867, -51.408637, 431.92, '04/02/2003', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('FRANCA', 'A708', -20.58444444, -47.38249999, 1002.74, '12/12/2002', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('SAO CARLOS', 'A711', -21.980353, -47.883927, 859.29, '04/09/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('IGUAPE', 'A712', -24.67166666, -47.54583333, 2.7, '20/07/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('SOROCABA', 'A713', -23.4261111, -47.58555555, 609.33, '22/08/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('ITAPEVA', 'A714', -23.98194443, -48.88583333, 743.33, '25/07/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('SAO MIGUEL ARCANJO', 'A715', -23.85194444, -48.16472222, 675.68, '15/08/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('OURINHOS', 'A716', -22.94888888, -49.89444444, 443.49, '29/08/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('RANCHARIA', 'A718', -22.37277777, -50.97472221, 398.75, '01/09/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('AVARE', 'A725', -23.10166666, -48.9411111, 776.36, '22/09/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('PIRACICABA', 'A726', -22.70305555, -47.62333332, 566.46, '26/09/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('LINS', 'A727', -21.66611111, -49.73472221, 460.65, '20/09/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('TAUBATE', 'A728', -23.04166666, -45.52083332, 582.26, '20/12/2006', 'SP', 5);
+
+INSERT INTO public.estacao(nome, codigo, latitude, longitude, altitude, data_fundacao, unidade_federativa, fk_regiao_id_regiao)
+	VALUES ('VOTUPORANGA', 'A729', -20.40333333, -49.96611111, 510.37, '04/12/2006', 'SP', 5);
+
+
+
+
+
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.8, 1014.8, 1014.3, 0, 25.5, 19.7, 25.5, 25.1, 19.7, 19.4, 71, 69, 70, 12, 7.8, 2.5, '01/01/2021 00:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.9, 1015.1, 1014.8, 0, 24.9, 20, 25.5, 24.9, 20.1, 19.4, 74, 70, 74, 352, 6.4, 2.2, '01/01/2021 01:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.4, 1015, 1014.4, 0, 24.7, 19.9, 25, 24.7, 20, 19.8, 75, 73, 74, 354, 6.7, 1.9, '01/01/2021 02:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.6, 1014.4, 1013.6, 0, 24.6, 19.4, 25, 24.6, 20, 19.4, 75, 73, 73, 352, 7.8, 2.1, '01/01/2021 03:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.1, 1013.6, 1013.1, 0, 22.9, 18.7, 24.7, 22.9, 19.4, 18.5, 77, 70, 77, 332, 7.2, 1.1, '01/01/2021 04:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013, 1013.2, 1012.9, 0, 22.3, 19.1, 23, 22.1, 19.1, 18.6, 82, 77, 82, 337, 3.5, 1.1, '01/01/2021 05:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1012.1, 1013, 1012.7, 0, 22.3, 19, 22.5, 22, 19.1, 18.9, 83, 81, 82, 322, 4, 1.6, '01/01/2021 06:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1012.9, 1012.9, 1012.7, 0, 21.1, 18.9, 22.3, 21.1, 19, 18.8, 87, 82, 87, 313, 3.9, 0.9, '01/01/2021 07:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.6, 1013.7, 1012.9, 0, 21.6, 19.3, 21.6, 20.9, 19.4, 18.9, 89, 87, 87, 316, 3.3, 1.5, '01/01/2021 08:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.3, 1014.3, 1013.6, 257.5, 24.9, 19.2, 24.9, 21.6, 19.6, 18.9, 87, 70, 71, 318, 7.1, 2.7, '01/01/2021 09:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.5, 1014.6, 1014.3, 1089.3, 27, 18.8, 27.1, 24.9, 19.5, 18.6, 71, 61, 61, 319, 7.3, 3.2, '01/01/2021 10:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.1, 1013.6, 1013.1, 0, 22.9, 18.7, 24.7, 22.9, 19.4, 18.5, 77, 70, 77, 332, 7.2, 1.1, '01/01/2021 11:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013, 1013.2, 1012.9, 0, 22.3, 19.1, 23, 22.1, 19.1, 18.6, 82, 77, 82, 337, 3.5, 1.1, '01/01/2021 12:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1012.9, 1012.9, 1012.7, 0, 21.1, 18.9, 22.3, 21.1, 19, 18.8, 87, 82, 87, 313, 3.9, 0.9, '01/01/2021 13:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.6, 1013.7, 1012.9, 0, 21.6, 19.3, 21.6, 20.9, 19.4, 18.9, 89, 87, 87, 316, 3.3, 1.5, '01/01/2021 14:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.5, 1014.6, 1014.3, 1089.3, 27, 18.8, 27.1, 24.9, 19.5, 18.6, 71, 61, 61, 319, 7.3, 3.2, '01/01/2021 15:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.1, 1013.6, 1013.1, 0, 22.9, 18.7, 24.7, 22.9, 19.4, 18.5, 77, 70, 77, 332, 7.2, 1.1, '01/01/2021 16:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.4, 1015, 1014.4, 0, 24.7, 19.9, 25, 24.7, 20, 19.8, 75, 73, 74, 354, 6.7, 1.9, '01/01/2021 17:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.6, 1014.4, 1013.6, 0, 24.6, 19.4, 25, 24.6, 20, 19.4, 75, 73, 73, 352, 7.8, 2.1, '01/01/2021 18:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1014.5, 1014.6, 1014.3, 1089.3, 27, 18.8, 27.1, 24.9, 19.5, 18.6, 71, 61, 61, 319, 7.3, 3.2, '01/01/2021 19:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.1, 1013.6, 1013.1, 0, 22.9, 18.7, 24.7, 22.9, 19.4, 18.5, 77, 70, 77, 332, 7.2, 1.1, '01/01/2021 20:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.6, 1014.4, 1013.6, 0, 24.6, 19.4, 25, 24.6, 20, 19.4, 75, 73, 73, 352, 7.8, 2.1, '01/01/2021 21:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1012.9, 1012.9, 1012.7, 0, 21.1, 18.9, 22.3, 21.1, 19, 18.8, 87, 82, 87, 313, 3.9, 0.9, '01/01/2021 22:00:00', 1);
+
+INSERT INTO public.descritivo_dado(precipitacao_total, pressao_atmosferica_ao_nivel_da_estacao_horaria, pressao_atmosferica_max_hora_ant, pressao_atmosferica_min_hora_ant, radiacao_global, temperatura_ar_bulbo_seco_horaria, temperatura_ponto_orvalho, temperatura_maxima_hora_ant, temperatura_minima_hora_ant, temperatura_orvalho_max_hora_ant, temperatura_orvalho_min_hora_ant, umidade_rel_max_hora_ant, umidade_rel_min_hora_ant, umidade_relativa_ar_horaria, vento_direcao_horaria, vento_rajada_maxima, vento_velocidade_horaria, data_hora, fk_estacao_id_estacao)
+	VALUES (0, 1013.6, 1013.7, 1012.9, 0, 21.6, 19.3, 21.6, 20.9, 19.4, 18.9, 89, 87, 87, 316, 3.3, 1.5, '01/01/2021 23:00:00', 1);
