@@ -8,21 +8,19 @@
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
 ## Product Backlog
-![slide3](https://github.com/CarcaraTec/IACIT/blob/9cc5f7d112aa1dbdcafd324183f230080d0c9c56/Apresentacao/Product%20Backlog.png)
+![slide3]()
 
 ## Proposta de Entrega
-![slide4](https://github.com/CarcaraTec/IACIT/blob/7911fa08e663e266980b6f69113454307dc599d4/Apresentacao/cards.png)
+![slide4]()
 
 ## Wireframe
-![slide5](https://github.com/CarcaraTec/IACIT/blob/8638bd53f509089ad7ce2114fb21120614ada315/Apresentacao/wireframe/canvas1.PNG)
-![slide6](https://github.com/CarcaraTec/IACIT/blob/4f309f4a08968a80d879506a5b01c4f184674eb9/Apresentacao/wireframe/canvas2.PNG)
 
 ## DER
 ![slide6](https://github.com/CarcaraTec/IACIT/blob/32716bda88ca3134b6c54f3f00f83557940063d3/DataBase/modelagem_img1.jpeg)
 ## Diagrama Lógico
 ![slide7](https://github.com/CarcaraTec/IACIT/blob/03f3c9bccdaa657cee9125b744f7bcb3620601f7/DataBase/L%C3%B3gico_img.png)
 ## Burndown
-
+![slide8]()
 ## Manual do Usuário
 
 ## Equipe
