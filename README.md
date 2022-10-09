@@ -28,11 +28,22 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 ## Tecnologias
 
-- `Java Spring`
+- `Java`
+- `Spring Boot`
 - `PostgreSQL`
-- `HTML 5`
+- `HTML`
 - `CSS`
+- `JavaScript`
+
+## Ferramentas
+
+- `InteliJ`
+- `PgAdmin`
+- `VS Code`
+- `Postman`
+- `GitHub`
 - `Discord`
+
 
 
   
