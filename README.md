@@ -19,7 +19,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 ## Diagrama Lógico
 ![slide7](https://github.com/CarcaraTec/IACIT/blob/03f3c9bccdaa657cee9125b744f7bcb3620601f7/DataBase/L%C3%B3gico_img.png)
 ## Burndown
-![slide8]()
+![slide8](https://github.com/CarcaraTec/IACIT/blob/376b323bc0c5e8cdd07dbe9ee06a863cf4b3f7a0/Apresentacao/burndown%20sprint2.jpeg)
 ## Documentos
 
 
