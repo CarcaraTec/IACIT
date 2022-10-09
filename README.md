@@ -4,7 +4,7 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
-## Objetivo
+## Objetivo 🔍
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
 ## Product Backlog
@@ -35,7 +35,9 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 ## Tecnologias
 
-- `Java Spring`
+- `Java`
+- `Spring Boot`
+- `JavaScript
 - `PostgreSQL`
 - `HTML 5`
 - `CSS`
