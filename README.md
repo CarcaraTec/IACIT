@@ -4,7 +4,23 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
-## Objetivo
+## Equipe  💻
+![slide8](https://github.com/CarcaraTec/IACIT/blob/0fd88f9531d908bbac4b1f549a502565b73f96f3/Apresentacao/Equipe.png)
+
+## Dev team
+- Bianca Tuchtler 
+- Igor Suzuki
+- Luiz Felipe Braga
+- Pedro Lucas Rodrigues
+- Wesley Ferreira
+
+## Scrum Master
+- Alan Araújo
+
+## Product Owner
+- Lucas Rodrigues
+
+## Objetivo 🔍
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
 ## Product Backlog
@@ -24,10 +40,8 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 [Documentação completa](https://github.com/CarcaraTec/IACIT/blob/f2395ae386d9142a8d43cd239214f647af38fc83/Documentos/Documenta%C3%A7%C3%A3o%20API.pdf)
 [Manual do Usuário]
 
-## Equipe
-![slide9](https://github.com/CarcaraTec/IACIT/blob/0fd88f9531d908bbac4b1f549a502565b73f96f3/Apresentacao/Equipe.png)
 
-## Tecnologias
+## Tecnologias ✔️
 
 - `Java`
 - `Spring Boot`
@@ -36,7 +50,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 - `CSS`
 - `JavaScript`
 
-## Ferramentas
+## Ferramentas  🛠️
 
 - `InteliJ`
 - `PgAdmin`
