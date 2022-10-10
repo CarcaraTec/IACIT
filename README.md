@@ -7,6 +7,14 @@
 ## Equipe  💻
 ![slide8](https://github.com/CarcaraTec/IACIT/blob/0fd88f9531d908bbac4b1f549a502565b73f96f3/Apresentacao/Equipe.png)
 
+## Scrum Master
+- Alan Araújo
+http://linkedin.com/in/alanaraujo1995/
+
+## Product Owner
+- Lucas Rodrigues
+https://www.linkedin.com/in/lucas-monteiro-56585117b
+
 ## Dev team
 - Bianca Tuchtler 
 https://www.linkedin.com/in/biancatuchtler
@@ -19,13 +27,6 @@ https://www.linkedin.com/in/pedro-lucas-rodrigues-7116961b5
 - Wesley Ferreira 
 https://www.linkedin.com/in/wesley-ferreira-405440207/
 
-## Scrum Master
-- Alan Araújo
-http://linkedin.com/in/alanaraujo1995/
-
-## Product Owner
-- Lucas Rodrigues
-https://www.linkedin.com/in/lucas-monteiro-56585117b
 
 ## Objetivo 🔍
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
