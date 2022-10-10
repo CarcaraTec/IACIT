@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+<script>
+
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var umi_ar = [];
+   var coluna = 2;
+
+   var umi_hora = [];
+   var colunaHora = 1;
+
+   var umi_max = [];
+   var colunaMax = 3;
+
+   var umi_min = [];
+   var colunaMin = 4;
+
+   $("table tr").each(function(){
+
+         umi_ar.push($(this).find("td:eq("+(coluna-1)+")").attr("id"));
+         umi_hora.push($(this).find("td:eq("+(colunaHora-1)+")").attr("id"));
+         umi_max.push($(this).find("td:eq("+(colunaMax-1)+")").attr("id"));
+         umi_min.push($(this).find("td:eq("+(colunaMin-1)+")").attr("id"));
+
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Horas');
+      data.addColumn('number', 'Umidade Ar');
+      data.addColumn('number', 'Umidade Maxima');
+      data.addColumn('number', 'Umidade Minima');
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(umi_hora[i].slice(11, -8)), parseInt(umi_ar[i]), parseInt(umi_max[i]), parseInt(umi_min[i])],
+
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Umidade',
+          subtitle: '   em porcentagem (%)'
+        },
+        width: 900,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechart'));
+
+      chart.draw(data, options);
+
+});
+    }
+</script>
+    <div id="linechart"></div>
+
+<table type="hidden">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "umidade : ${grafico}">
+        <td th:id="${umidade.umi_hora}"></td>
+        <td th:id="${umidade.umi_ar}"></td>
+        <td th:id="${umidade.umi_max}"></td>
+        <td th:id="${umidade.umi_min}"></td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>
