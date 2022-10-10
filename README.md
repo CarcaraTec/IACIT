@@ -47,7 +47,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 ## Documentos 📄
 [Documentação completa](https://github.com/CarcaraTec/IACIT/blob/f2395ae386d9142a8d43cd239214f647af38fc83/Documentos/Documenta%C3%A7%C3%A3o%20API.pdf)
-[Manual do Usuário]
+[Manual do Usuário] (https://github.com/CarcaraTec/IACIT/blob/ecbc71d5a132c00d5259f645077ca205aadddda8/Documentos/Manual%20do%20Usu%C3%A1rio.pdf)
 
 
 ## Tecnologias ✔️
