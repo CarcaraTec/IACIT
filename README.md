@@ -37,7 +37,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 - `Java`
 - `Spring Boot`
-- `JavaScript
+- `JavaScript`
 - `PostgreSQL`
 - `HTML 5`
 - `CSS`
