@@ -9,23 +9,23 @@
 
 ## Scrum Master
 - Alan Araújo
-linkedin.com/in/alanaraujo1995/
+ www.linkedin.com/in/alanaraujo1995/
 
 ## Product Owner
 - Lucas Rodrigues
-linkedin.com/in/lucas-monteiro-56585117b
+www.linkedin.com/in/lucas-monteiro-56585117b
 
 ## Dev team
-- Bianca Tuchtler 
-linkedin.com/in/biancatuchtler
+- Bianca Tuchtler
+www.linkedin.com/in/biancatuchtler
 - Igor Suzuki
-linkedin.com/in/igor-suzuki
-- Luiz Felipe Braga
-luuuizf22@gmail.com
+www.linkedin.com/in/igor-suzuki
+- Luiz Felipe Braga 
+www.luuuizf22@gmail.com
 - Pedro Lucas Rodrigues
-linkedin.com/in/pedro-lucas-rodrigues-7116961b5
-- Wesley Ferreira 
-linkedin.com/in/wesley-ferreira-405440207/
+www.linkedin.com/in/pedro-lucas-rodrigues-7116961b5
+- Wesley Ferreira
+www.linkedin.com/in/wesley-ferreira-405440207/
 
 
 ## Objetivo 🔍
