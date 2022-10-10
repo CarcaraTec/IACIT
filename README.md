@@ -46,7 +46,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 
 
-## Tecnologias
+## Ferramentas e Linguagens  🛠️
 
 - `Java`
 - `Spring Boot`
