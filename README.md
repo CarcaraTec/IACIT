@@ -4,6 +4,21 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
+**Equipe  💻**
+
+## Dev team
+- Bianca Tuchtler 
+- Igor Suzuki
+- Luiz Felipe Braga
+- Pedro Lucas Rodrigues
+- Wesley Ferreira
+
+## Scrum Master
+- Alan Araújo
+
+## Product Owner
+- Lucas Rodrigues
+
 ## Objetivo 🔍
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
