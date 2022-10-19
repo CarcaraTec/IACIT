@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráficos</title>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body bgcolor="#C4DDFF">
+
+
+<!---------------------------------------------SCRIPT PRECIPITAÇÃO------------------------------------------------------->
+<script>
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var prec_hora = [];
+   var colunaPrecHora = 1;
+
+   var prec_total = [];
+   var colunaPrecTotal = 2;
+
+   $("#precipitacao tr").each(function(){
+
+         prec_hora.push($(this).find("td:eq("+(colunaPrecHora-1)+")").attr("id"));
+         prec_total.push($(this).find("td:eq("+(colunaPrecTotal-1)+")").attr("id"));
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora do dia');
+      data.addColumn('number', 'Precipitação Total (mm)');
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(prec_hora[i].slice(11, -8)), parseFloat(prec_total[i])],
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Precipitação (mm)'
+        },
+        chartArea: {
+        backgroundColor: '#E5F0FF'
+        },
+        backgroundColor: 'transparent',
+        width: 1050,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechartPrecipitacao'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+
+});
+    }
+</script>
+
+<!---------------------------------------------SCRIPT PRESSÃO------------------------------------------------------->
+<script>
+
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var pre_hora = [];
+   var colunaPreHora = 1;
+
+   var pre_atm_estacao = [];
+   var colunaEstacao = 2;
+
+   var pre_atm_max = [];
+   var colunaMax = 3;
+
+   var pre_atm_min = [];
+   var colunaMin = 4;
+
+   $("#pressao tr").each(function(){
+
+         pre_hora.push($(this).find("td:eq("+(colunaPreHora-1)+")").attr("id"));
+         pre_atm_estacao.push($(this).find("td:eq("+(colunaEstacao-1)+")").attr("id"));
+         pre_atm_max.push($(this).find("td:eq("+(colunaMax-1)+")").attr("id"));
+         pre_atm_min.push($(this).find("td:eq("+(colunaMin-1)+")").attr("id"));
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora do dia');
+      data.addColumn('number', 'Pressão Atmosférica a Nível da Estação (mB)');
+      data.addColumn('number', 'Pressão Atmosférica Máx na Hora Ant. (mB)');
+      data.addColumn('number', 'Pressão Atmosférica Mín na Hora Ant. (mB)');
+
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(pre_hora[i].slice(11, -8)), parseFloat(pre_atm_estacao[i]), parseFloat(pre_atm_max[i]), parseFloat(pre_atm_min[i])]
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Pressão (mB)'
+        },
+        chartArea: {
+        backgroundColor: '#E5F0FF'
+        },
+        backgroundColor: 'transparent',
+        width: 1200,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechartPressao'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+
+});
+    }
+</script>
+
+<!---------------------------------------------SCRIPT RADIAÇÃO------------------------------------------------------->
+
+<script>
+
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var rad_hora = [];
+   var colunaRadHora = 1;
+
+   var rad_global = [];
+   var colunaGlobal = 2;
+
+   $("#radiacao tr").each(function(){
+
+         rad_hora.push($(this).find("td:eq("+(colunaRadHora-1)+")").attr("id"));
+         rad_global.push($(this).find("td:eq("+(colunaGlobal-1)+")").attr("id"));
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora do dia');
+      data.addColumn('number', 'Radiação Global (Kj/m²)');
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(rad_hora[i].slice(11, -8)), parseFloat(rad_global[i])],
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Radiação (Kj/m²)'
+        },
+        chartArea: {
+        backgroundColor: '#E5F0FF'
+        },
+        backgroundColor: 'transparent',
+        width: 1050,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechartRadiacao'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+
+});
+    }
+</script>
+
+    <!-------------------------------------------SCRIPT TEMPERATURA----------------------------------------------->
+
+<script>
+
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var temp_hora = [];
+   var colunaHora = 1;
+
+   var temp_ar = [];
+   var colunaTempAr = 2;
+
+   var temp_ponto_orvalho = [];
+   var colunaPOrv = 3;
+
+   var temp_max = [];
+   var colunaTempMax = 4;
+
+   var temp_min = [];
+   var colunaTempMin = 5;
+
+   var temp_orvalho_max = [];
+   var colunaTempOrvMax = 6;
+
+   var temp_orvalho_min = [];
+   var colunaTempOrvMin = 7;
+
+   $("#temperatura tr").each(function(){
+
+         temp_hora.push($(this).find("td:eq("+(colunaHora-1)+")").attr("id"));
+         temp_ar.push($(this).find("td:eq("+(colunaTempAr-1)+")").attr("id"));
+         temp_ponto_orvalho.push($(this).find("td:eq("+(colunaPOrv-1)+")").attr("id"));
+         temp_max.push($(this).find("td:eq("+(colunaTempMax-1)+")").attr("id"));
+         temp_min.push($(this).find("td:eq("+(colunaTempMin-1)+")").attr("id"));
+         temp_orvalho_max.push($(this).find("td:eq("+(colunaTempOrvMax-1)+")").attr("id"));
+         temp_orvalho_min.push($(this).find("td:eq("+(colunaTempOrvMin-1)+")").attr("id"));
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora do dia');
+      data.addColumn('number', 'Temperatura do Ar - Bulbo Seco (°C)');
+      data.addColumn('number', 'Temperatura Do Ponto De Orvalho (°C)');
+      data.addColumn('number', 'Temperatura Máxima na Hora Ant. (°C)');
+      data.addColumn('number', 'Temperatura Mínima na Hora Ant. (°C)');
+      data.addColumn('number', 'Temperatura Orvalho Máxima na Hora Ant. (°C)');
+      data.addColumn('number', 'Temperatura Orvalho Mínima na Hora Ant. (°C)');
+
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(temp_hora[i].slice(11, -8)), parseFloat(temp_ar[i]), parseFloat(temp_ponto_orvalho[i]), parseFloat(temp_max[i]),
+        parseFloat(temp_min[i]), parseFloat(temp_orvalho_max[i]), parseFloat(temp_orvalho_min[i])]
+
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Temperatura (ºC)'
+        },
+        chartArea: {
+        backgroundColor: '#E5F0FF'
+        },
+        backgroundColor: 'transparent',
+        width: 1200,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechartTemp'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+
+});
+    }
+</script>
+
+<!----------------------------------------------SCRIPT UMIDADE------------------------------------------------------>
+
+<script>
+
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var umi_ar = [];
+   var coluna = 2;
+
+   var umi_hora = [];
+   var colunaHora = 1;
+
+   var umi_max = [];
+   var colunaMax = 3;
+
+   var umi_min = [];
+   var colunaMin = 4;
+
+   $("#umidade tr").each(function(){
+
+         umi_ar.push($(this).find("td:eq("+(coluna-1)+")").attr("id"));
+         umi_hora.push($(this).find("td:eq("+(colunaHora-1)+")").attr("id"));
+         umi_max.push($(this).find("td:eq("+(colunaMax-1)+")").attr("id"));
+         umi_min.push($(this).find("td:eq("+(colunaMin-1)+")").attr("id"));
+
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora do dia');
+      data.addColumn('number', 'Umidade Ar');
+      data.addColumn('number', 'Umidade Máxima');
+      data.addColumn('number', 'Umidade Mínima');
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(umi_hora[i].slice(11, -8)), parseFloat(umi_ar[i]), parseFloat(umi_max[i]), parseFloat(umi_min[i])],
+
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Umidade (%)'
+        },
+        chartArea: {
+        backgroundColor: '#E5F0FF'
+        },
+        backgroundColor: 'transparent',
+        width: 1000,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechart'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+
+});
+    }
+</script>
+
+<!--------------------------------------SCRIPT VENTO-------------------------------------------------------------->
+
+<script>
+
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    $(document).ready(function(){
+
+   var vento_hora = [];
+   var colunaVentoHora = 1;
+
+   var vento_dir_horaria = [];
+   var colunaDirecao = 2;
+
+   var vento_rajada_max = [];
+   var colunaRajada = 3;
+
+   var vento_vel_horaria = [];
+   var colunaVel = 4;
+
+   $("#vento tr").each(function(){
+
+         vento_hora.push($(this).find("td:eq("+(colunaVentoHora-1)+")").attr("id"));
+         vento_dir_horaria.push($(this).find("td:eq("+(colunaDirecao-1)+")").attr("id"));
+         vento_rajada_max.push($(this).find("td:eq("+(colunaRajada-1)+")").attr("id"));
+         vento_vel_horaria.push($(this).find("td:eq("+(colunaVel-1)+")").attr("id"));
+   });
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora do dia');
+      //data.addColumn('number', 'Direção Horária (ºgraus)');
+      data.addColumn('number', 'Rajada Máxima (m/s)');
+      data.addColumn('number', 'Velocidade Horária (m/s)');
+
+      for (var i = 1; i<25; i++){
+      data.addRows([
+        [parseInt(vento_hora[i].slice(11, -8)), parseFloat(vento_rajada_max[i]), parseFloat(vento_vel_horaria[i])],
+
+      ]);
+      }
+
+      var options = {
+        chart: {
+          title: 'Vento (m/s)'
+        },
+        chartArea: {
+        backgroundColor: '#E5F0FF'
+        },
+        backgroundColor: 'transparent',
+        width: 1050,
+        height: 500
+      };
+      var chart = new google.charts.Line(document.getElementById('linechartVento'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+
+});
+    }
+    function assinar(){
+    var dia = document.getElementById('pesquisa').value.slice(8);
+    var mes = document.getElementById('pesquisa').value.slice(5, -3);
+    var ano = document.getElementById('pesquisa').value.slice(0, -6);
+    var parametro = document.getElementById('mudarParametro').value;
+    window.location = "http://localhost:8080/grafico/"+parametro+"/"+dia+"-"+mes+"-"+ano+".html"
+}
+</script>
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------CORPO DA PÁGINA------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+<H1 align="center">Gráficos</H1>
+</BR></BR></BR></BR>
+<div>
+    <H4 align="left">Procurar estação:</H4>
+    <label>Código:</label>
+    <input type="search" id="mudarParametro">
+    <label>Data:</label>
+    <input type="date" id="pesquisa">
+    <input type="button" class="btn btn-terciary"  name="envia" id="envia" value="Pesquisar" onclick="assinar()"></form>
+</div>
+    <H2 align="center">Gráfico de Precipitação</H2>
+    <div id="linechartPrecipitacao"></div>
+</BR></BR></BR></BR>
+    <H2 align="center">Gráfico de Pressão</H2>
+    <div id="linechartPressao"></div>
+</BR></BR></BR></BR>
+    <H2 align="center">Gráfico de Radiação</H2>
+    <div id="linechartRadiacao"></div>
+</BR></BR></BR></BR>
+    <H2 align="center">Gráfico de Temperatura</H2>
+    <div id="linechartTemp"></div>
+</BR></BR></BR></BR>
+    <H2 align="center">Gráfico de Umidade</H2>
+    <div id="linechart"></div>
+</BR></BR></BR></BR>
+    <H2 align="center">Gráfico de Vento</H2>
+    <div id="linechartVento"></div>
+<!---------------------------------------TABELA PRECIPITAÇÃO---------------------------------------------->
+<table id="precipitacao" type="hidden">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "precipitacao : ${graficoPrecipitacao}">
+        <td th:id="${precipitacao.prec_hora}"></td>
+        <td th:id="${precipitacao.prec_total}"></td>
+    </tr>
+</table>
+
+<!--------------------------------------TABELA PRESSÃO--------------------------------------------->
+
+<table id="pressao">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "pressao : ${graficoPressao}">
+        <td th:id="${pressao.pressao_hora}"></td>
+        <td th:id="${pressao.pressao_estacao}"></td>
+        <td th:id="${pressao.pressao_max}"></td>
+        <td th:id="${pressao.pressao_min}"></td>
+    </tr>
+</table>
+
+<!---------------------------------------TABELA RADIAÇÃO---------------------------------------------->
+<table id="radiacao" type="hidden">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "radiacao : ${graficoRadiacao}">
+        <td th:id="${radiacao.rad_hora}"></td>
+        <td th:id="${radiacao.rad_global}"></td>
+    </tr>
+</table>
+
+<!--------------------------------------TABELA TEMPERATURA----------------------------------------------->
+<table id="temperatura" type="hidden">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "temp : ${graficoTemp}">
+        <td th:id="${temp.temp_hora}"></td>
+        <td th:id="${temp.temp_ar}"></td>
+        <td th:id="${temp.temp_ponto_orvalho}"></td>
+        <td th:id="${temp.temp_max}"></td>
+        <td th:id="${temp.temp_min}"></td>
+        <td th:id="${temp.temp_orvalho_max}"></td>
+        <td th:id="${temp.temp_orvalho_min}"></td>
+    </tr>
+</table>
+
+    <!--------------------------------------TABELA UMIDADE--------------------------------------------->
+
+<table id="umidade">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "umidade : ${grafico}">
+        <td th:id="${umidade.umi_hora}"></td>
+        <td th:id="${umidade.umi_ar}"></td>
+        <td th:id="${umidade.umi_max}"></td>
+        <td th:id="${umidade.umi_min}"></td>
+    </tr>
+</table>
+
+    <!-----------------------------------------TABELA VENTO-------------------------------------------->
+<table id="vento" type="hidden">
+    <tr type="hidden">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    <tr th:each = "vento : ${graficoVento}">
+        <td th:id="${vento.vento_hora}"></td>
+        <td th:id="${vento.vento_dir_horaria}"></td>
+        <td th:id="${vento.vento_rajada_max}"></td>
+        <td th:id="${vento.vento_vel_horaria}"></td>
+    </tr>
+</table>
+<!---------------------------------------------FIM DAS TABELAS---------------------------------------------->
+
+</body>
+</html>
