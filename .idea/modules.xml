@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IACIT.iml" filepath="$PROJECT_DIR$/.idea/IACIT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aplicação/project.iml" filepath="$PROJECT_DIR$/Aplicação/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data Insert API/project (1).iml" filepath="$PROJECT_DIR$/Data Insert API/project (1).iml" />
+    </modules>
+  </component>
+</project>
