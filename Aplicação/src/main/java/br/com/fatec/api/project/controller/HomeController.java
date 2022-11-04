@@ -281,25 +281,19 @@ public class HomeController extends Conexao {
         ModelAndView andView = new ModelAndView("assets/demo/chart-area-demo.js");
         return andView;
     }
-    @GetMapping (value = "/assets/demo/chart-bar-demo.js")
-    public ModelAndView chartbar (){
-        ModelAndView andView = new ModelAndView("assets/demo/chart-bar-demo.js");
-        return andView;
-    }
-    @GetMapping (value = "/assets/demo/chart-pie-demo.js")
-    public ModelAndView chartpie (){
-        ModelAndView andView = new ModelAndView("assets/demo/chart-pie-demo.js");
-        return andView;
-    }
     @GetMapping (value = "/assets/demo/datatables-demo.js")
     public ModelAndView datatables (){
         ModelAndView andView = new ModelAndView("assets/demo/datatables-demo.js");
         return andView;
     }
+    @GetMapping (value = "/charts={codigo}")
+    public ModelAndView chartsEs (@PathVariable("codigo") String estacao){
+        ModelAndView andView = new ModelAndView("charts");
+        return andView;
+    }
     @GetMapping (value = "/charts.html")
     public ModelAndView charts (){
         ModelAndView andView = new ModelAndView("charts.html");
-        getValorMensalidade();
         return andView;
     }
     @GetMapping("/getValorMensalidade")
