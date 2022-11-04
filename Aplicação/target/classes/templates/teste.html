@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testando</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<SCRIPT>
+//grafico de barras com arquivo json
+
+var dadosJson = $.ajax({
+url:'dados.json',
+dataType: 'json',
+async: false
+}).responseText;
+
+var tabela = new google.visualization.DataTable(dadosJson);
+
+var grafico = new google.visualization.BarChart(
+document.getElementById('graficoBarrasJson'));
+
+grafico.draw(tabela);
+</SCRIPT>
+<div id="graficoBarrasJson"></div>
+</body>
+</html>
