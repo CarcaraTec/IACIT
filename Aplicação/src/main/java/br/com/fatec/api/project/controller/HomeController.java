@@ -296,10 +296,10 @@ public class HomeController extends Conexao {
         ModelAndView andView = new ModelAndView("charts.html");
         return andView;
     }
-    @GetMapping("/getValorMensalidade")
-    public ResponseEntity<?> getValorMensalidade(){
-        Conexao1 conexao = new Conexao1();
-        return ResponseEntity.ok(Conexao1.postDados("https://uctdemo.bitrix24.com/rest/448/mh895nfply8yvk9z/crm.lead.add.json?FIELDS[SECOND NAME]=sadasdas&FIELDS[NAME]=da&FIELDS[LEAD NAME]=","a"));
+    @GetMapping (value = "/tables.html")
+    public ModelAndView tables (){
+        ModelAndView andView = new ModelAndView("tables.html");
+        return andView;
     }
 //---------------------------------------------------------------------------------------------------------------------//
 }

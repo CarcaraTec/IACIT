@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="project" />
+        <module name="Aplicação" />
         <module name="AplicaçãoAOB" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Aplicação" options="-parameters" />
       <module name="AplicaçãoAOB" options="-parameters" />
       <module name="project" options="-parameters" />
     </option>
