@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <!--<script src="./js/script.js" defer></script>-->
     <title>Home</title>
+
 </head>
-<body bgcolor="#87CEFA">
+<body bgcolor="#C4DDFF">
+
+<script>
+    function assinar(){
+    var dia = document.getElementById('pesquisa').value.slice(8);
+    var mes = document.getElementById('pesquisa').value.slice(5, -3);
+    var ano = document.getElementById('pesquisa').value.slice(0, -6);
+    var parametro = document.getElementById('mudarParametro').value;
+    window.location = "http://localhost:8080/grafico/"+parametro+"/"+dia+"-"+mes+"-"+ano+".html"
+}
+</script>
 <H1>Menu IACIT Carcara Tec</H1>
+<div>
     <form>
-        <div>
-            <label for="regiao">Informe a região:</label>
-            <select id=regiao>
-                <option></option>
-                <option value="N">Norte</option>
-                <option value="NE">Nordeste</option>
-                <option value="CO">Centro-Oeste</option>
-                <option value="SE">Sudeste</option>
-                <option value="S">Sul</option>
-            </select>
-            <button onclick="buscarRegiao()">Buscar</button>
-        </div>
+
+            <H4 align="left">Procurar estação:</H4>
+            <input type="search" id="mudarParametro">
+            <input type="date" id="pesquisa">
+            <input type="button" class="btn btn-terciary"  name="envia" id="envia" value="Pesquisar" onclick="assinar()">
+    </form>
+</div>
         <br/>
         <!--<div>
             <label for="diaa">Informe a data de pesquisa:</label>

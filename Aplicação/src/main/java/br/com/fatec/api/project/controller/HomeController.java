@@ -6,8 +6,14 @@ import br.com.fatec.api.project.repository.*;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -101,13 +107,13 @@ public class HomeController extends Conexao {
         return lista;
     }
     //FILTRAR PRESSAO POR DATA
-    @GetMapping(value = "/pressao/{estacao}/{data}")
+    /*@GetMapping(value = "/pressao/{estacao}/{data}")
     public List<PressaoAtm> listarPressaoData(@PathVariable("estacao") String codigo, @PathVariable("data") String pressaoData) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date dataCerta = formatter.parse(pressaoData);
         List<PressaoAtm> lista = pressaoRep.findByPressaoData(dataCerta, codigo);
         return lista;
-    }
+    }*/
     //FILTRAR PRESSAO POR DATA/HORA
     @GetMapping(value = "/pressao/{estacao}/{data}/{hora}")
     public List<PressaoAtm> listarPressaoHora(@PathVariable("estacao") String codigo, @PathVariable("hora") String pressaoHora, @PathVariable("data") String pressaoData) throws ParseException {
@@ -129,13 +135,13 @@ public class HomeController extends Conexao {
         return lista;
     }
     //FILTRAR RADIAÇÃO POR DATA
-    @GetMapping(value = "/radiacao/{estacao}/{data}")
+    /*@GetMapping(value = "/radiacao/{estacao}/{data}")
     public List<Radiacao> listarRadiacaoData(@PathVariable("estacao") String codigo, @PathVariable("data") String radData) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date dataCerta = formatter.parse(radData);
         List<Radiacao> lista = radiacaoRep.findByRadData(dataCerta, codigo);
         return lista;
-    }
+    }*/
     //FILTRAR RADIAÇÃO POR DATA/HORA
     @GetMapping(value = "/radiacao/{estacao}/{data}/{hora}")
     public List<Radiacao> listarRadiacaoHora(@PathVariable("estacao") String codigo, @PathVariable("hora") String radHora, @PathVariable("data") String radData) throws ParseException {
@@ -157,13 +163,13 @@ public class HomeController extends Conexao {
         return lista;
     }
     //FILTRAR TEMPERATURA POR DATA
-    @GetMapping(value = "/temperatura/{estacao}/{data}")
+    /*@GetMapping(value = "/temperatura/{estacao}/{data}")
     public List<Temperatura> listarTemperaturaData(@PathVariable("estacao") String codigo, @PathVariable("data") String tempData) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date dataCerta = formatter.parse(tempData);
         List<Temperatura> lista = tempRep.findByTempData(dataCerta, codigo);
         return lista;
-    }
+    }*/
     //FILTRAR TEMPERATURA POR DATA/HORA
     @GetMapping(value = "/temperatura/{estacao}/{data}/{hora}")
     public List<Temperatura> listarTemperaturaHora(@PathVariable("estacao") String codigo, @PathVariable("hora") String tempHora, @PathVariable("data") String tempData) throws ParseException {
@@ -171,7 +177,6 @@ public class HomeController extends Conexao {
         Date dataCerta = form.parse(tempData);
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
         Date horaCerta = formatter.parse(tempHora);
-
         List<Temperatura> lista = tempRep.findByTempHora(dataCerta, horaCerta, codigo);
         return lista;
     }
@@ -184,14 +189,30 @@ public class HomeController extends Conexao {
         List<Umidade> lista = umiRep.findByEstacao(estacao);
         return lista;
     }
-    //FILTRAR UMIDADE POR DATA
-    @GetMapping(value = "/umidade/{estacao}/{data}")
-    public ModelAndView listarUmidadeData(@PathVariable("estacao") String codigo, @PathVariable("data") String umiData) throws ParseException {
+    //FILTRAR TODOS POR DATA
+    @GetMapping(value = "/grafico/{estacao}/{data}")
+    public ModelAndView listarData(@PathVariable("estacao") String codigo, @PathVariable("data") String umiData) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date dataCerta = formatter.parse(umiData);
         ModelAndView andView = new ModelAndView("grafico");
-        Iterable<Umidade> lista = umiRep.findByUmiData(dataCerta, codigo);
-        andView.addObject("grafico",lista);
+
+        Iterable<Precipitacao> listaPrecipitacao = precRep.findByPrecData(dataCerta, codigo);
+        andView.addObject("graficoPrecipitacao",listaPrecipitacao);
+
+        Iterable<PressaoAtm> listaPressao = pressaoRep.findByPressaoData(dataCerta, codigo);
+        andView.addObject("graficoPressao",listaPressao);
+
+        Iterable<Radiacao> listaRadiacao = radiacaoRep.findByRadData(dataCerta, codigo);
+        andView.addObject("graficoRadiacao",listaRadiacao);
+
+        Iterable<Temperatura> listaTemp = tempRep.findByTempData(dataCerta, codigo);
+        andView.addObject("graficoTemp",listaTemp);
+
+        Iterable<Umidade> listaUmidade = umiRep.findByUmiData(dataCerta, codigo);
+        andView.addObject("grafico",listaUmidade);
+
+        Iterable<Vento> listaVento = ventoRep.findByVentoData(dataCerta, codigo);
+        andView.addObject("graficoVento",listaVento);
         return andView;
     }
     //FILTRAR UMIDADE POR DATA/HORA
@@ -205,7 +226,6 @@ public class HomeController extends Conexao {
         List<Umidade> lista = umiRep.findByUmiHora(dataCerta, horaCerta, codigo);
         return lista;
     }
-
 //---------------------------------------------------------------------------------------------------------------------//
 
     //MOSTRAR VENTO
@@ -215,13 +235,15 @@ public class HomeController extends Conexao {
         return lista;
     }
     //FILTRAR VENTO POR DATA
-    @GetMapping(value = "/vento/{estacao}/{data}")
-    public List<Vento> listarVentoData(@PathVariable("estacao") String codigo, @PathVariable("data") String ventoData) throws ParseException {
+    /*@GetMapping(value = "/vento/{estacao}/{data}")
+    public ModelAndView listarVentoData(@PathVariable("estacao") String codigo, @PathVariable("data") String ventoData) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date dataCerta = formatter.parse(ventoData);
-        List<Vento> lista = ventoRep.findByVentoData(dataCerta, codigo);
-        return lista;
-    }
+        ModelAndView andView = new ModelAndView("grafico");
+        Iterable<Vento> lista = ventoRep.findByVentoData(dataCerta, codigo);
+        andView.addObject("graficoVento",lista);
+        return andView;
+    }*/
     //FILTRAR VENTO POR DATA/HORA
     @GetMapping(value = "/vento/{estacao}/{data}/{hora}")
     public List<Vento> listarVentoHora(@PathVariable("estacao") String codigo, @PathVariable("hora") String ventoHora, @PathVariable("data") String ventoData) throws ParseException {
@@ -234,7 +256,56 @@ public class HomeController extends Conexao {
         return lista;
     }
 
+    @GetMapping (value = "/index.html")
+    public ModelAndView template (){
+        ModelAndView andView = new ModelAndView("index");
+        return andView;
+    }
+    @GetMapping (value = "/css/styles.css")
+    public ModelAndView css (){
+        ModelAndView andView = new ModelAndView("css/styles.css");
+        return andView;
+    }
+    @GetMapping (value = "/js/datatables-simple-demo.js")
+    public ModelAndView simpledemo (){
+        ModelAndView andView = new ModelAndView("js/datatables-simple-demo.js");
+        return andView;
+    }
+    @GetMapping (value = "/js/scripts.js")
+    public ModelAndView scripts (){
+        ModelAndView andView = new ModelAndView("js/scripts.js");
+        return andView;
+    }
+    @GetMapping (value = "/assets/demo/chart-area-demo.js")
+    public ModelAndView chartarea (){
+        ModelAndView andView = new ModelAndView("assets/demo/chart-area-demo.js");
+        return andView;
+    }
+    @GetMapping (value = "/assets/demo/chart-bar-demo.js")
+    public ModelAndView chartbar (){
+        ModelAndView andView = new ModelAndView("assets/demo/chart-bar-demo.js");
+        return andView;
+    }
+    @GetMapping (value = "/assets/demo/chart-pie-demo.js")
+    public ModelAndView chartpie (){
+        ModelAndView andView = new ModelAndView("assets/demo/chart-pie-demo.js");
+        return andView;
+    }
+    @GetMapping (value = "/assets/demo/datatables-demo.js")
+    public ModelAndView datatables (){
+        ModelAndView andView = new ModelAndView("assets/demo/datatables-demo.js");
+        return andView;
+    }
+    @GetMapping (value = "/charts.html")
+    public ModelAndView charts (){
+        ModelAndView andView = new ModelAndView("charts.html");
+        getValorMensalidade();
+        return andView;
+    }
+    @GetMapping("/getValorMensalidade")
+    public ResponseEntity<?> getValorMensalidade(){
+        Conexao1 conexao = new Conexao1();
+        return ResponseEntity.ok(Conexao1.postDados("https://uctdemo.bitrix24.com/rest/448/mh895nfply8yvk9z/crm.lead.add.json?FIELDS[SECOND NAME]=sadasdas&FIELDS[NAME]=da&FIELDS[LEAD NAME]=","a"));
+    }
 //---------------------------------------------------------------------------------------------------------------------//
 }
-
-

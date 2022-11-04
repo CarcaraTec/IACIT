@@ -26,7 +26,7 @@ public class PressaoAtm {
     private Date pressaoData;
 
     @Column(name = "pre_hora")
-    private String pressaoHora;
+    private Date pressaoHora;
 
     @Column(name = "fk_estacao_cod_wmo")
     private String estacao;
@@ -71,11 +71,11 @@ public class PressaoAtm {
         this.pressaoData = pressao_data;
     }
 
-    public String getPressao_hora() {
+    public Date getPressao_hora() {
         return pressaoHora;
     }
 
-    public void setPressao_hora(String pressao_hora) {
+    public void setPressao_hora(Date pressao_hora) {
         this.pressaoHora = pressao_hora;
     }
 
