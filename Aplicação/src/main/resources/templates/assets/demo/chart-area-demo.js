@@ -5,11 +5,10 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
         var doc = window.location.pathname.slice(8);
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){
-                alert(data[0].codigo+" - "+data[0].nome_estacao);
                 const languagesSelect = document.getElementById("languages-select");
                 var languagesList = [];
-                for (var i = 0; i<24; i++){
-                languagesList.push(data[i].nome_estacao+" ("+data[i].codigo+")/");
+                for (var i = 0; i<data.length; i++){
+                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
                 }
 
                 languagesList.forEach((language) => {

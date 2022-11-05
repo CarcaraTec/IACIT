@@ -13,8 +13,9 @@
 
         <script>
     function assinar(){
-    var estacao = document.getElementById('mudarParametro').value;
-    window.location.href = "charts="+estacao;
+    var estacao = document.getElementById('languages-select').value;
+    const words = estacao.split('|');
+    window.location.href = "charts="+words[1].toUpperCase();
 }
 </script>
     </head>
