@@ -5,8 +5,7 @@
     */
     // 
 // Scripts
-// 
-
+//
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -24,3 +23,23 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+var nomeUsuario;
+function logar(){
+            $(document).ready(function(){
+                $.getJSON("/usuarios",function(data){
+                    const inventory = data;
+                        function isCherries(fruit){
+                            return fruit.email === document.getElementById('inputEmail').value;
+                        }
+                        var usuario = inventory.find(isCherries);
+                    if(usuario.senha == document.getElementById('inputPassword').value){
+                        console.log("logado")
+                        nomeUsuario = usuario.nome;
+//                        $("#nomeUsuario").append(usuario.nome);
+                        window.location.href = "index.html";
+                    }else{
+                        alert("Senha incorreta")
+                    }
+                });
+            });
+        }
