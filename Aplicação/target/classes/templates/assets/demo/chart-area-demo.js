@@ -3,6 +3,20 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
         var doc = window.location.pathname.slice(8);
+        $(document).ready(function(){
+            $.getJSON("/SE/SP",function(data){
+                const languagesSelect = document.getElementById("languages-select");
+                var languagesList = [];
+                for (var i = 0; i<data.length; i++){
+                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
+                }
+
+                languagesList.forEach((language) => {
+                  option = new Option(language, language.toLowerCase());
+                  languagesSelect.options[languagesSelect.options.length] = option;
+                });
+            });
+            });
 $(document).ready(function(){
     $.getJSON("/precipitacao/"+doc+"/01-01-2021",function(data){
     var arrayHora = [];

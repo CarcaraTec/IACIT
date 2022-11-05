@@ -62,7 +62,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 ## Ferramentas  🛠️
 
-- `InteliJ`
+- `IntelliJ`
 - `PgAdmin`
 - `VS Code`
 - `Postman`
