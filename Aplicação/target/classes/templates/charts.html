@@ -11,12 +11,6 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-        <script>
-    function assinar(){
-    var estacao = document.getElementById('mudarParametro').value;
-    window.location.href = "charts="+estacao;
-}
-</script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -116,7 +110,7 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
+                    <form class="container-fluid px-4">
                         <h1 class="mt-4">Charts</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -124,9 +118,13 @@
                         </ol>
                         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                             <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" id="mudarParametro" />
-                                <button class="btn btn-primary" id="btnNavbarSearc" type="button" onclick="assinar()"><i class="fas fa-search" ></i></button>
+                                <select class="form-select" aria-label="Default select example" id="languages-select">
+                                    <option value="" disabled selected>Estações:</option>
+                                </select>                                <button class="btn btn-primary" id="btnNavbarSearc" type="button" onclick="assinar()"><i class="fas fa-search" ></i></button>
                             </div>
+                        </form>
+                        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+
                         </form>
                         <div>
                             <nav class="navbar navbar-light bg-light">
