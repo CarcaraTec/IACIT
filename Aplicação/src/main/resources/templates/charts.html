@@ -18,7 +18,10 @@
     var data = document.getElementById('datepicker').value;
     var data1 = data.replace('/', '-');
     var dataFull = data1.replace('/', '-');
+
     var estacao = document.getElementById('languages-select').value;
+    var estacao1 = document.getElementById('select1').value;
+    alert(estacao1)
     const words = estacao.split('|');
     window.location.href = "charts="+words[1].toUpperCase()+"="+dataFull;
 }

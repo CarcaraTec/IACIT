@@ -1,6 +1,8 @@
 // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
+
+
         var doc = window.location.pathname.slice(8);
         $("#select1").append("Estações:");
         $(document).ready(function(){
@@ -30,15 +32,15 @@ $(document).ready(function(){
     $.getJSON("/precipitacao/"+dado[0]+"/"+dado[1],function(data){
 
     if(dado[1]!=null){
-        var data = dado[1];
-        var data1 = data.replaceAll('-', '/');
+
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[0]+"|");
-        console.log(data1)
+        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[0]+"|"+"     ("+dado[1]+")");
+        $("#languages-select").append(1);
 
-        $('#teste').append(data1);
         document.getElementById('precipitacao').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
+
 
 
     var arrayHora = [];
