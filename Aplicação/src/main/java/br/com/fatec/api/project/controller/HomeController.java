@@ -301,5 +301,20 @@ public class HomeController extends Conexao {
         ModelAndView andView = new ModelAndView("tables.html");
         return andView;
     }
+    @GetMapping (value = "/register.html")
+    public ModelAndView register (){
+        ModelAndView andView = new ModelAndView("register.html");
+        return andView;
+    }
+    @GetMapping (value = "/login.html")
+    public ModelAndView login (){
+        ModelAndView andView = new ModelAndView("login.html");
+        return andView;
+    }
+    @GetMapping (value = "/register.js")
+    public ModelAndView registerjs (){
+        ModelAndView andView = new ModelAndView("register.js");
+        return andView;
+    }
 //---------------------------------------------------------------------------------------------------------------------//
 }

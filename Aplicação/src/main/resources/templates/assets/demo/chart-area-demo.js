@@ -2,35 +2,58 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
+
         var doc = window.location.pathname.slice(8);
+        $("#select1").append("Estações:");
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){
+                const dado = doc.split('=');
                 const languagesSelect = document.getElementById("languages-select");
                 var languagesList = [];
                 for (var i = 0; i<data.length; i++){
                 languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
                 }
-
                 languagesList.forEach((language) => {
                   option = new Option(language, language.toLowerCase());
                   languagesSelect.options[languagesSelect.options.length] = option;
+
                 });
-            });
-            });
+                const inventory = data;
+                function isCherries(fruit) {
+                    return fruit.codigo === dado[0];
+                }
+            console.log(inventory.find(isCherries));
+
+
 $(document).ready(function(){
-    $.getJSON("/precipitacao/"+doc+"/01-01-2021",function(data){
+    console.log(dado[1])
+    console.log("/precipitacao/"+doc+"/"+dado[1])
+    $.getJSON("/precipitacao/"+dado[0]+"/"+dado[1],function(data){
+
+    if(dado[1]!=null){
+
+        document.getElementById("select1").innerHTML = "";
+        $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[0]+"|");
+        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[0]+"|"+"     ("+dado[1]+")");
+        $("#languages-select").append(1);
+
+        document.getElementById('precipitacao').className = 'btn btn-xlg btn-primary waves-effect waves-light';
+    }
+
+
+
     var arrayHora = [];
     var arrayTotal = [];
 
 for (var i = 0; i<24; i++){
     arrayHora.push(data[i].prec_hora.slice(11, -13));
     if(data[i].prec_total==-999){
-        arrayTotal.push(0);
+        arrayTotal.push(null);
     }else{
         arrayTotal.push(data[i].prec_total);
     }
 }
-
+//card-header
 // Area Chart Example
 var myLineChart = 0;
 var ctx = document.getElementById("myAreaChart");
@@ -69,7 +92,6 @@ myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 100,
           maxTicksLimit: 24
         },
         gridLines: {
@@ -81,6 +103,8 @@ myLineChart = new Chart(ctx, {
       display: false
     }
   }
+});
+});
 });
 });
 });
