@@ -13,7 +13,6 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 for (var i = 0; i<data.length; i++){
                 languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
                 }
-
                 languagesList.forEach((language) => {
                   option = new Option(language, language.toLowerCase());
                   languagesSelect.options[languagesSelect.options.length] = option;
@@ -42,6 +41,7 @@ $(document).ready(function(){
     }
 
 
+
     var arrayHora = [];
     var arrayTotal = [];
 
@@ -57,7 +57,7 @@ for (var i = 0; i<24; i++){
 
     arrayHora.push(data[i].prec_hora.slice(11, -13));
     if(data[i].prec_total==-999){
-        arrayTotal.push(0);
+        arrayTotal.push(null);
     }else{
         arrayTotal.push(data[i].prec_total);
     }
@@ -101,7 +101,6 @@ myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 100,
           maxTicksLimit: 24
         },
         gridLines: {
