@@ -2,12 +2,11 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-function assinar(){
-        var dia = document.getElementById('mudarParametro').value;
-        var arrayHora = [];
-        var arrayTotal = [];
+        var doc = window.location.pathname.slice(8);
 $(document).ready(function(){
-                $.getJSON("/precipitacao/"+dia+"/01-01-2021",function(data){
+    $.getJSON("/precipitacao/"+doc+"/01-01-2021",function(data){
+    var arrayHora = [];
+    var arrayTotal = [];
 
 for (var i = 0; i<24; i++){
     arrayHora.push(data[i].prec_hora.slice(11, -13));
@@ -71,4 +70,3 @@ myLineChart = new Chart(ctx, {
 });
 });
 });
-}

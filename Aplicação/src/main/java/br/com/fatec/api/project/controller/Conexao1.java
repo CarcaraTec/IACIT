@@ -5,6 +5,7 @@ import org.apache.tomcat.util.http.fileupload.IOUtils;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Base64;
@@ -24,7 +25,7 @@ public class Conexao1 {
 
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
-            connection.setRequestProperty("Content-Lenght", "" + Integer.toString(parametrosUsuario.getBytes().length));
+            connection.setRequestProperty("Content-Lenght", "" + parametrosUsuario.getBytes().length);
 
             connection.setRequestProperty("Content-Language", "pt-BR");
 
@@ -35,13 +36,13 @@ public class Conexao1 {
             connection.setDoOutput(true);
 
             //Envio
-            OutputStreamWriter outPutStream = new OutputStreamWriter(connection.getOutputStream(), "utf-8");
+            OutputStreamWriter outPutStream = new OutputStreamWriter(connection.getOutputStream(), StandardCharsets.UTF_8);
             outPutStream.write(parametrosUsuario);
             outPutStream.flush();
             outPutStream.close();
             //Recepção
             InputStream inputStream = connection.getInputStream();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
 
             String linha;
             StringBuffer resposta = new StringBuffer();

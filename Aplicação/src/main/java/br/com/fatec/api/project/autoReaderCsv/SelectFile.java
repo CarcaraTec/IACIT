@@ -27,9 +27,9 @@ public class SelectFile {
             final JFileChooser chooser = new JFileChooser();
             chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             chooser.showOpenDialog(null);
-            prog.arquivos = (this.listar(chooser.getSelectedFile(), ".CSV"));
+            Program.arquivos = (this.listar(chooser.getSelectedFile(), ".CSV"));
 
-            prog.ultimo = prog.arquivos.size();
+            Program.ultimo = Program.arquivos.size();
         }
     }
 
