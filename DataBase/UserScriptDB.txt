@@ -1,0 +1,7 @@
+CREATE TABLE cadastro(
+cpf numeric,
+nome varchar(200),
+email varchar (200),
+senha varchar (200),
+CONSTRAINT pk_cadastro PRIMARY KEY (cpf)
+);
