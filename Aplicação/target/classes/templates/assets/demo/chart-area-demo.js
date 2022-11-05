@@ -9,7 +9,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 const languagesSelect = document.getElementById("languages-select");
                 var languagesList = [];
                 for (var i = 0; i<24; i++){
-                languagesList.push(data[i].nome_estacao+" ("+data[i].codigo+")/"+i);
+                languagesList.push(data[i].nome_estacao+" ("+data[i].codigo+")/");
                 }
 
                 languagesList.forEach((language) => {
