@@ -43,13 +43,14 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 ![slide7](https://github.com/CarcaraTec/IACIT/blob/03f3c9bccdaa657cee9125b744f7bcb3620601f7/DataBase/L%C3%B3gico_img.png)
 
 ## Burndown
-![slide8](https://github.com/CarcaraTec/IACIT/blob/376b323bc0c5e8cdd07dbe9ee06a863cf4b3f7a0/Apresentacao/burndown%20sprint2.jpeg)
+![slide8](https://github.com/CarcaraTec/IACIT/blob/d349c92373df663dce3ea00edbab8da379bf4ec0/Apresentacao/Burndown%20sprint3.jpeg)
 
 ## Documentos 📄
 [Documentação completa](https://github.com/CarcaraTec/IACIT/blob/f2395ae386d9142a8d43cd239214f647af38fc83/Documentos/Documenta%C3%A7%C3%A3o%20API.pdf)
 
 [Manual do Usuário](https://github.com/CarcaraTec/IACIT/blob/ecbc71d5a132c00d5259f645077ca205aadddda8/Documentos/Manual%20do%20Usu%C3%A1rio.pdf)
 
+[Board das tarefas](https://www.notion.so/101794d5e1f7436d9cfea03360385733?v=567a7d20ccf64d58b94f9a8ae0257f99)
 
 ## Tecnologias ✔️
 
