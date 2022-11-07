@@ -1,0 +1,19 @@
+-- Table: public.usuario_log
+
+-- DROP TABLE public.usuario_log;
+
+CREATE TABLE public.usuario_log
+(
+    id serial,
+    email character varying(100) COLLATE pg_catalog."default",
+    ip text COLLATE pg_catalog."default",
+    status text COLLATE pg_catalog."default",
+    CONSTRAINT pk_usuario_log PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.usuario_log
+    OWNER to postgres;
