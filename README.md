@@ -68,7 +68,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 - `VS Code`
 - `Postman`
 - `GitHub`
-
+- `Discord`
 
 
 
