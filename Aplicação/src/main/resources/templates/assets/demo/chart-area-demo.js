@@ -16,26 +16,24 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 languagesList.forEach((language) => {
                   option = new Option(language, language.toLowerCase());
                   languagesSelect.options[languagesSelect.options.length] = option;
-
                 });
                 const inventory = data;
                 function isCherries(fruit) {
-                    return fruit.codigo === dado[0];
+                    return fruit.codigo === dado[1];
                 }
-            console.log(inventory.find(isCherries));
+            console.log(dado[0]);
 
-
+if(dado[0]=="precipitacao"){
 $(document).ready(function(){
     console.log(dado[1])
-    console.log("/precipitacao/"+doc+"/"+dado[1])
-    $.getJSON("/precipitacao/"+dado[0]+"/"+dado[1],function(data){
+    console.log("/precipitacao/"+doc+"/"+dado[2])
+    $.getJSON("/precipitacao/"+dado[1]+"/"+dado[2],function(data){
 
     if(dado[1]!=null){
 
         document.getElementById("select1").innerHTML = "";
-        $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[0]+"|");
-        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[0]+"|"+"     ("+dado[1]+")");
-        $("#languages-select").append(1);
+        $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
+        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
         document.getElementById('precipitacao').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
@@ -46,6 +44,7 @@ $(document).ready(function(){
     var arrayTotal = [];
 
 for (var i = 0; i<24; i++){
+
     arrayHora.push(data[i].prec_hora.slice(11, -13));
     if(data[i].prec_total==-999){
         arrayTotal.push(null);
@@ -62,7 +61,7 @@ myLineChart = new Chart(ctx, {
   data: {
     labels: arrayHora,
     datasets: [{
-      label: "(mm)",
+      label: "Precipitação(mm)",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -100,11 +99,12 @@ myLineChart = new Chart(ctx, {
       }],
     },
     legend: {
-      display: false
+      display: true
     }
   }
 });
 });
 });
+}
 });
 });

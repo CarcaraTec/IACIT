@@ -6,6 +6,44 @@
     // 
 // Scripts
 //
+console.log(document.getElementById('labelHome').value)
+if(window.location.pathname == "/index.html" || window.location.pathname == "/charts.html" || document.getElementById('labelHome').value == 0){
+function deslogar(){
+window.location.href = "login.html";
+}
+$(function() {
+        $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+          function(json) {
+$(document).ready(function(){
+    $.getJSON("/log",function(log){
+        const userLog = log.reverse();
+            function isCherries(fruit){
+                return fruit.ip === json.ip;
+                }
+              logUser = userLog.find(isCherries);
+
+              if(logUser.status == "deslogado"){
+                window.location.href = "login.html";
+              }
+
+
+              $(document).ready(function(){
+                              $.getJSON("/usuarios",function(data){
+                                    const inventory = data;
+                                    function isCherries(fruit){
+                                        return fruit.email === logUser.email;
+                                        }
+                                    var usuario = inventory.find(isCherries);
+                                    console.log(usuario)
+                                    $("#nomeUsuario").append(usuario.nome);
+                              });
+                                          });
+                                          });
+                                                              });
+                                          }
+                                                  );
+                                                });
+                                          }
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -34,8 +72,8 @@ function logar(){
                         var usuario = inventory.find(isCherries);
                     if(usuario.senha == document.getElementById('inputPassword').value){
                         console.log("logado")
+                        console.log(usuario)
                         nomeUsuario = usuario.nome;
-//                        $("#nomeUsuario").append(usuario.nome);
                         window.location.href = "index.html";
                     }else{
                         alert("Senha incorreta")

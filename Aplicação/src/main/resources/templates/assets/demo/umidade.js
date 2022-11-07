@@ -4,7 +4,6 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 
         var doc = window.location.pathname.slice(8);
-        $("#select1").append("Estações:");
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){
                 const dado = doc.split('=');
@@ -21,13 +20,12 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
                 }
-            console.log(dado[0]);
-
-if(dado[0]=="precipitacao"){
+            console.log(dado[0])
+if(dado[0]=="umidade"){
 $(document).ready(function(){
     console.log(dado[1])
-    console.log("/precipitacao/"+doc+"/"+dado[2])
-    $.getJSON("/precipitacao/"+dado[1]+"/"+dado[2],function(data){
+    console.log("/umidade/"+doc+"/"+dado[2])
+    $.getJSON("/umidade/"+dado[1]+"/"+dado[2],function(data){
 
     if(dado[1]!=null){
 
@@ -35,22 +33,37 @@ $(document).ready(function(){
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
         $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
-        document.getElementById('precipitacao').className = 'btn btn-xlg btn-primary waves-effect waves-light';
+        document.getElementById('umidade1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
-
-
 
     var arrayHora = [];
     var arrayTotal = [];
 
+    var arrayUmiAr = [];
+    var arrayUmiMax = [];
+    var arrayUmiMin = [];
+
+
 for (var i = 0; i<24; i++){
 
-    arrayHora.push(data[i].prec_hora.slice(11, -13));
-    if(data[i].prec_total==-999){
-        arrayTotal.push(null);
+    arrayHora.push(data[i].umi_hora.slice(11, -13));
+    if(data[i].umi_ar==-999){
+        arrayUmiAr.push(null);
     }else{
-        arrayTotal.push(data[i].prec_total);
+        arrayUmiAr.push(data[i].umi_ar);
     }
+
+    if(data[i].umi_max==-999){
+            arrayUmiMax.push(null);
+        }else{
+            arrayUmiMax.push(data[i].umi_max);
+        }
+
+    if(data[i].umi_min==-999){
+            arrayUmiMin.push(null);
+        }else{
+            arrayUmiMin.push(data[i].umi_min);
+        }
 }
 //card-header
 // Area Chart Example
@@ -61,19 +74,47 @@ myLineChart = new Chart(ctx, {
   data: {
     labels: arrayHora,
     datasets: [{
-      label: "Precipitação(mm)",
+      label: "Ar(%)",
       lineTension: 0.3,
-      backgroundColor: "rgba(2,117,216,0.2)",
-      borderColor: "rgba(2,117,216,1)",
+      backgroundColor: "rgba(255,99,71,0)",
+      borderColor: "rgba(255,140,0,1)",
       pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBackgroundColor: "rgba(255,140,0,1)",
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHoverBackgroundColor: "rgba(255,140,0,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: arrayTotal,
-    }],
+      data: arrayUmiAr,
+    },
+    {
+          label: "Máxima(%)",
+          lineTension: 0.3,
+          backgroundColor: "rgba(255,99,71,0)",
+          borderColor: "rgb(255,0,0)",
+          pointRadius: 5,
+          pointBackgroundColor: "rgb(255,0,0)",
+          pointBorderColor: "rgba(255,255,255,0.8)",
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgb(255,0,0)",
+          pointHitRadius: 50,
+          pointBorderWidth: 2,
+          data: arrayUmiMax,
+        },
+        {
+              label: "Mínima(%)",
+              lineTension: 0.3,
+              backgroundColor: "rgba(255,99,71,0)",
+              borderColor: "rgba(2,117,216,1)",
+              pointRadius: 5,
+              pointBackgroundColor: "rgba(2,117,216,1)",
+              pointBorderColor: "rgba(255,255,255,0.8)",
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(2,117,216,1)",
+              pointHitRadius: 50,
+              pointBorderWidth: 2,
+              data: arrayUmiMin,
+            }],
   },
   options: {
     scales: {
@@ -90,7 +131,6 @@ myLineChart = new Chart(ctx, {
       }],
       yAxes: [{
         ticks: {
-          min: 0,
           maxTicksLimit: 24
         },
         gridLines: {

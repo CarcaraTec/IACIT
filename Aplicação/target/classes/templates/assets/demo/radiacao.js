@@ -4,7 +4,6 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 
         var doc = window.location.pathname.slice(8);
-        $("#select1").append("Estações:");
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){
                 const dado = doc.split('=');
@@ -21,13 +20,12 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
                 }
-            console.log(dado[0]);
-
-if(dado[0]=="precipitacao"){
+            console.log(dado[0])
+if(dado[0]=="radiacao"){
 $(document).ready(function(){
     console.log(dado[1])
-    console.log("/precipitacao/"+doc+"/"+dado[2])
-    $.getJSON("/precipitacao/"+dado[1]+"/"+dado[2],function(data){
+    console.log("/radiacao/"+doc+"/"+dado[2])
+    $.getJSON("/radiacao/"+dado[1]+"/"+dado[2],function(data){
 
     if(dado[1]!=null){
 
@@ -35,21 +33,22 @@ $(document).ready(function(){
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
         $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
-        document.getElementById('precipitacao').className = 'btn btn-xlg btn-primary waves-effect waves-light';
+        document.getElementById('radiacao1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
-
-
 
     var arrayHora = [];
     var arrayTotal = [];
 
+    var arrayRadGlobal = [];
+
+
 for (var i = 0; i<24; i++){
 
-    arrayHora.push(data[i].prec_hora.slice(11, -13));
-    if(data[i].prec_total==-999){
+    arrayHora.push(data[i].rad_hora.slice(11, -13));
+    if(data[i].rad_global==-999){
         arrayTotal.push(null);
     }else{
-        arrayTotal.push(data[i].prec_total);
+        arrayTotal.push(data[i].rad_glocal);
     }
 }
 //card-header
@@ -61,7 +60,7 @@ myLineChart = new Chart(ctx, {
   data: {
     labels: arrayHora,
     datasets: [{
-      label: "Precipitação(mm)",
+      label: "(Kj/m²)",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -99,7 +98,7 @@ myLineChart = new Chart(ctx, {
       }],
     },
     legend: {
-      display: true
+      display: false
     }
   }
 });
