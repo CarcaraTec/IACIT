@@ -31,7 +31,6 @@ $(document).ready(function(){
 
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
-        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
         document.getElementById('radiacao1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
@@ -46,9 +45,9 @@ for (var i = 0; i<24; i++){
 
     arrayHora.push(data[i].rad_hora.slice(11, -13));
     if(data[i].rad_global==-999){
-        arrayTotal.push(null);
+        arrayRadGlobal.push(null);
     }else{
-        arrayTotal.push(data[i].rad_glocal);
+        arrayRadGlobal.push(data[i].rad_global);
     }
 }
 //card-header
@@ -60,7 +59,7 @@ myLineChart = new Chart(ctx, {
   data: {
     labels: arrayHora,
     datasets: [{
-      label: "(Kj/m²)",
+      label: "Radiação Global(Kj/m²)",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -71,7 +70,7 @@ myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: arrayTotal,
+      data: arrayRadGlobal,
     }],
   },
   options: {
@@ -98,7 +97,7 @@ myLineChart = new Chart(ctx, {
       }],
     },
     legend: {
-      display: false
+      display: true
     }
   }
 });
