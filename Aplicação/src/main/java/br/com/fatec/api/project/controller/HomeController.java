@@ -48,15 +48,6 @@ public class HomeController extends Conexao {
         return andView;
     }
 
-    //FILTRO DE ESTADOS POR REGIÃO
-    @RequestMapping(method = RequestMethod.GET, value = "/{regiao}")
-    public ModelAndView estados(@PathVariable("regiao") String regiao) {
-        Iterable<Estado> lista = EstRep.findByRegiao(regiao);
-        System.out.println(lista);
-        ModelAndView andView = new ModelAndView("estados");
-        andView.addObject("estados", lista);
-        return andView;
-    }
 
     //FILTRO POR ESTADO
     @GetMapping(value = "/{regiao}/{estado}")
@@ -391,6 +382,23 @@ public class HomeController extends Conexao {
     @GetMapping(value = "/assets/demo/vento.js")
     public ModelAndView ventoarea() {
         ModelAndView andView = new ModelAndView("assets/demo/vento.js");
+        return andView;
+    }
+
+    @GetMapping(value = "/assets/demo/ventoJaneiro.js")
+    public ModelAndView ventoJaneiroarea() {
+        ModelAndView andView = new ModelAndView("assets/demo/ventoJaneiro.js");
+        return andView;
+    }
+    @GetMapping(value = "/assets/demo/precipitacaoMes.js")
+    public ModelAndView precMesArea() {
+        ModelAndView andView = new ModelAndView("assets/demo/precipitacaoMes.js");
+        return andView;
+    }
+
+    @GetMapping(value = "/js/funcoesButtons.js")
+    public ModelAndView funcoesButtons() {
+        ModelAndView andView = new ModelAndView("js/funcoesButtons.js");
         return andView;
     }
 }

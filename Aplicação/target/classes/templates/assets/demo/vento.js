@@ -31,30 +31,12 @@ $(document).ready(function(){
 
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
-        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
         document.getElementById('vento1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
 
     var arrayHora = [];
     var arrayTotal = [];
-
-    var arrayPressaoEstacao = [];
-    var arrayPressaoMax = [];
-    var arrayPressaoMin = [];
-
-    var arrayRadGlobal = [];
-
-    var arrayTempAr = [];
-    var arrayTempMax = [];
-    var arrayTempMin = [];
-    var arrayTempOrvalho = [];
-    var arrayTempOrvalhoMax = [];
-    var arrayTempOrvalhoMin = [];
-
-    var arrayUmiAr = [];
-    var arrayUmiMax = [];
-    var arrayUmiMin = [];
 
     var arrayVentoRajada = [];
     var arrayVelHoraria = [];

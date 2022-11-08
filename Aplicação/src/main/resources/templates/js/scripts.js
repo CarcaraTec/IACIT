@@ -6,6 +6,66 @@
     // 
 // Scripts
 //
+$(document).ready(function(){
+    $.getJSON("/vento/A701",function(data){
+            var arrayVento = [];
+
+            var mes = "02";
+            for (var dia = 01; dia<32; dia++){
+                for(var hora = 0; hora<24; hora++){
+                    if(dia<10){
+                        if(hora<10){
+                            function isCherries(fruit){
+                            return fruit.vento_data === "2021-"+mes+"-0"+dia+"T03:00:00.000+00:00" && fruit.vento_hora === "1970-01-01T0"+hora+":00:00.000+00:00";
+                            }
+                            var log = data.find(isCherries);
+                            if(log === undefined){
+                            }else{
+                            arrayVento.push(log);
+                            }
+                        }
+                        if(hora>=10){
+                            function isCherries(fruit){
+                            return fruit.vento_data === "2021-"+mes+"-0"+dia+"T03:00:00.000+00:00" && fruit.vento_hora === "1970-01-01T"+hora+":00:00.000+00:00";
+                            }
+                            var log = data.find(isCherries);
+                            if(log === undefined){
+                            }else{
+                            arrayVento.push(log);
+                            }
+                        }
+                    }
+                    if(dia>=10){
+                        if(hora<10){
+                            function isCherries(fruit){
+                            return fruit.vento_data === "2021-"+mes+"-"+dia+"T03:00:00.000+00:00" &&
+                            fruit.vento_hora === "1970-01-01T0"+hora+":00:00.000+00:00";
+                            }
+                            var log = data.find(isCherries);
+                            if(log === undefined){
+                            }else{
+                            arrayVento.push(log);
+                            }
+                        }
+                        if(hora>=10){
+                            function isCherries(fruit){
+                            return fruit.vento_data === "2021-"+mes+"-"+dia+"T03:00:00.000+00:00" &&
+                            fruit.vento_hora === "1970-01-01T"+hora+":00:00.000+00:00";
+                            }
+                            var log = data.find(isCherries);
+                            if(log === undefined){
+                            }else{
+                            arrayVento.push(log);
+                            }
+                        }
+                    }
+                }
+            }
+            console.log(arrayVento)
+
+});
+});
+
 console.log(document.getElementById('labelHome').value)
 if(window.location.pathname == "/index.html" || window.location.pathname == "/charts.html" || document.getElementById('labelHome').value == 0){
 function deslogar(){

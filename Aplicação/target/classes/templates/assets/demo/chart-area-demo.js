@@ -4,10 +4,10 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 
         var doc = window.location.pathname.slice(8);
-        $("#select1").append("Estações:");
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){
                 const dado = doc.split('=');
+                document.getElementById('datepicker').value = dado[2].replaceAll("-","/");
                 const languagesSelect = document.getElementById("languages-select");
                 var languagesList = [];
                 for (var i = 0; i<data.length; i++){
@@ -22,7 +22,9 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                     return fruit.codigo === dado[1];
                 }
             console.log(dado[0]);
-
+            $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
+            document.getElementById('select1').value = inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")";
+            console.log(document.getElementById("languages-select").value)
 if(dado[0]=="precipitacao"){
 $(document).ready(function(){
     console.log(dado[1])
@@ -33,9 +35,9 @@ $(document).ready(function(){
 
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
-        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
-        document.getElementById('precipitacao').className = 'btn btn-xlg btn-primary waves-effect waves-light';
+
+        document.getElementById('precipitacao1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
 
 

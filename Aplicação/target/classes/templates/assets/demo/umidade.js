@@ -31,7 +31,6 @@ $(document).ready(function(){
 
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
-        $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
 
         document.getElementById('umidade1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
