@@ -385,9 +385,9 @@ public class HomeController extends Conexao {
         return andView;
     }
 
-    @GetMapping(value = "/assets/demo/ventoJaneiro.js")
+    @GetMapping(value = "/assets/demo/ventoMes.js")
     public ModelAndView ventoJaneiroarea() {
-        ModelAndView andView = new ModelAndView("assets/demo/ventoJaneiro.js");
+        ModelAndView andView = new ModelAndView("assets/demo/ventoMes.js");
         return andView;
     }
     @GetMapping(value = "/assets/demo/precipitacaoMes.js")
