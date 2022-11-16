@@ -8,14 +8,14 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
             $.getJSON("/SE/SP",function(data){
                 const dado = doc.split('=');
                 const languagesSelect = document.getElementById("languages-select");
-                var languagesList = [];
-                for (var i = 0; i<data.length; i++){
-                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
-                }
-                languagesList.forEach((language) => {
-                  option = new Option(language, language.toLowerCase());
-                  languagesSelect.options[languagesSelect.options.length] = option;
-                });
+//                var languagesList = [];
+//                for (var i = 0; i<data.length; i++){
+//                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
+//                }
+//                languagesList.forEach((language) => {
+//                  option = new Option(language, language.toLowerCase());
+//                  languagesSelect.options[languagesSelect.options.length] = option;
+//                });
                 const inventory = data;
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
