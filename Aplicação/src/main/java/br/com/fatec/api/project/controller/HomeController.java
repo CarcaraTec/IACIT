@@ -397,6 +397,12 @@ public class HomeController extends Conexao {
         return andView;
     }
 
+    @GetMapping(value = "/assets/demo/temperaturaMes.js")
+    public ModelAndView temperaturaMesArea() {
+        ModelAndView andView = new ModelAndView("assets/demo/temperaturaMes.js");
+        return andView;
+    }
+
     @GetMapping(value = "/assets/demo/ventoMes.js")
     public ModelAndView ventoJaneiroarea() {
         ModelAndView andView = new ModelAndView("assets/demo/ventoMes.js");
