@@ -403,6 +403,12 @@ public class HomeController extends Conexao {
         return andView;
     }
 
+    @GetMapping(value = "/assets/demo/umidadeMes.js")
+    public ModelAndView umidadeMesArea() {
+        ModelAndView andView = new ModelAndView("assets/demo/umidadeMes.js");
+        return andView;
+    }
+
     @GetMapping(value = "/assets/demo/ventoMes.js")
     public ModelAndView ventoJaneiroarea() {
         ModelAndView andView = new ModelAndView("assets/demo/ventoMes.js");
