@@ -31,7 +31,7 @@ www.linkedin.com/in/wesley-ferreira-405440207/
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
 ## Product Backlog
-![slide3](https://github.com/CarcaraTec/IACIT/blob/02dfb9224f4d10627410f5808775befdbf6d89c0/Apresentacao/Backlog.png)
+![slide3](https://github.com/CarcaraTec/IACIT/blob/Sprint-4/Apresentacao/Product%20Backlog.jpg)
 
 ## Proposta de Entrega
 ![slide4](https://github.com/CarcaraTec/IACIT/blob/Sprint-4/Apresentacao/Proposta%20de%20entrega.jpg)
