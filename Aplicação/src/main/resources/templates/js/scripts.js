@@ -66,7 +66,6 @@ $(document).ready(function(){
 });
 });
 
-console.log(document.getElementById('labelHome').value)
 if(window.location.pathname == "/index.html" || window.location.pathname == "/charts.html" || document.getElementById('labelHome').value == 0){
 function deslogar(){
 window.location.href = "login.html";
