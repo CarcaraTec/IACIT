@@ -14,7 +14,7 @@ import java.util.List;
 public interface EstadoRepository extends JpaRepository<Estado, Integer>{
     //List<Estado> findByRegiao(String regiao);
 
-    //@Query(nativeQuery = true, value = "select * from estado where fk_regiao_nome_regiao = (:regiao)")
+    @Query(nativeQuery = true, value = "select * from estado where fk_regiao_nome_regiao = (:regiao)")
     List<Estado> findByRegiao(String regiao);
 
 }
