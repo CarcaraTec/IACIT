@@ -2,7 +2,6 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-
         var doc = window.location.pathname.slice(8);
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){

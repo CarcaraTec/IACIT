@@ -48,6 +48,12 @@ public class HomeController extends Conexao {
         return andView;
     }
 
+    //FILTRO POR REGIAO
+    @GetMapping(value = "/{regiao}")
+    public List<Estado> listarRegiao(@PathVariable("regiao") String regiao) {
+        List<Estado> lista = EstRep.findByRegiao(regiao);
+        return lista;
+    }
 
     //FILTRO POR ESTADO
     @GetMapping(value = "/{regiao}/{estado}")
