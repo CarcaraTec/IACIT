@@ -50,7 +50,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 [Manual do Usuário](https://github.com/CarcaraTec/IACIT/blob/ecbc71d5a132c00d5259f645077ca205aadddda8/Documentos/Manual%20do%20Usu%C3%A1rio.pdf)
 
-[Board das tarefas](https://www.notion.so/101794d5e1f7436d9cfea03360385733?v=567a7d20ccf64d58b94f9a8ae0257f99)
+[Board das tarefas](https://www.notion.so/97c17a5a9f174afb83aea8e0fac9c84e?v=11c6c4501b8b4fb4841a6759ad58b5aa)
 
 ## Tecnologias ✔️
 
