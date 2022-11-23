@@ -8,24 +8,23 @@
 ![slide1](https://github.com/CarcaraTec/IACIT/blob/0fd88f9531d908bbac4b1f549a502565b73f96f3/Apresentacao/Equipe.png)
 
 ## Scrum Master
-- Alan Araújo
- www.linkedin.com/in/alanaraujo1995/
+- Alan Araújo     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+
 
 ## Product Owner
-- Lucas Rodrigues
-www.linkedin.com/in/lucas-monteiro-56585117b
+- Lucas Rodrigues <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+
 
 ## Dev team
-- Bianca Tuchtler
-www.linkedin.com/in/biancatuchtler
-- Igor Suzuki
-www.linkedin.com/in/igor-suzuki
+- Bianca Tuchtler <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+
+- Igor Suzuki     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+
 - Luiz Felipe Braga 
 www.luuuizf22@gmail.com
-- Pedro Lucas Rodrigues
-www.linkedin.com/in/pedro-lucas-rodrigues-7116961b5
-- Wesley Ferreira
-www.linkedin.com/in/wesley-ferreira-405440207/
+- Pedro Lucas Rodrigues   <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+
+- Wesley Ferreira         <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
 
 ## Objetivo 🔍
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
@@ -70,6 +69,8 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 - `GitHub`
 - `Discord`
 
+
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/alanaraujo1995/)
 
 
   
