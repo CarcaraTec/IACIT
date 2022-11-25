@@ -82,7 +82,7 @@ $(document).ready(function(){
                 }
               logUser = userLog.find(isCherries);
 
-              if(logUser.status == "deslogado" || logUser === undefined){
+              if(logUser === undefined || logUser.status == "deslogado"){
                 window.location.href = "login.html";
               }
 

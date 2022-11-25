@@ -1,6 +1,8 @@
 package br.com.fatec.api.project.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -14,7 +16,7 @@ public class Precipitacao {
     private Integer precId;
 
     @Column(name = "prec_total")
-    private double precTotal;
+    private BigDecimal precTotal;
 
     @Column(name = "prec_hora")
     private Date precHora;
@@ -25,6 +27,17 @@ public class Precipitacao {
     @Column(name = "fk_estacao_cod_wmo")
     private String estacao;
 
+    public Precipitacao() {
+    }
+
+    public Precipitacao(Integer precId, Date precData, Date precHora, BigDecimal precTotal, String estacao) {
+        this.precId = precId;
+        this.precTotal = precTotal;
+        this.precHora = precHora;
+        this.precData = precData;
+        this.estacao = estacao;
+    }
+
     public Integer getPrec_id() {
         return precId;
     }
@@ -33,11 +46,11 @@ public class Precipitacao {
         this.precId = prec_id;
     }
 
-    public double getPrec_total() {
+    public BigDecimal getPrec_total() {
         return precTotal;
     }
 
-    public void setPrec_total(double prec_total) {
+    public void setPrec_total(BigDecimal prec_total) {
         this.precTotal = prec_total;
     }
 
