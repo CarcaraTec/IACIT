@@ -12,12 +12,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @CrossOrigin("*")
@@ -40,6 +48,8 @@ public class HomeController extends Conexao {
     private UmidadeRepository umiRep;
     @Autowired
     private VentoRepository ventoRep;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     //Tela inicial
     @RequestMapping(value = "/home")
@@ -48,12 +58,6 @@ public class HomeController extends Conexao {
         return andView;
     }
 
-    //FILTRO POR REGIAO
-    @GetMapping(value = "/{regiao}")
-    public List<Estado> listarRegiao(@PathVariable("regiao") String regiao) {
-        List<Estado> lista = EstRep.findByRegiao(regiao);
-        return lista;
-    }
 
     //FILTRO POR ESTADO
     @GetMapping(value = "/{regiao}/{estado}")
@@ -98,6 +102,33 @@ public class HomeController extends Conexao {
         return lista;
     }
 
+    private LocalDate formataDate(Object o) {
+        if (!Objects.isNull(o)) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return LocalDate.parse(sdf.format((Date) o), formatter);
+        }
+        return null;
+    }
+
+    @GetMapping(value = "/prec/{estacao}/{data1}/{data2}")
+    public List<Precipitacao> listarRangePrecipitacao(@PathVariable("estacao") String codigo, @PathVariable("data1") String precData, @PathVariable("data2") String precData1){
+        Query query = entityManager.createNativeQuery("select * from precipitacao where prec_data between '"+precData+"' and '"+precData1+"' and fk_estacao_cod_wmo = '"+codigo+"'");
+        List<Object[]> rows = query.getResultList();
+
+        List<Precipitacao> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Precipitacao(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (String) obj[4]
+            ));
+        }
+        return list;
+    }
 //---------------------------------------------------------------------------------------------------------------------//
 
     //MOSTRAR PRESSAO ATMOSFERICA

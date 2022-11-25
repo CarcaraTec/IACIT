@@ -8,24 +8,23 @@
 ![slide1](https://github.com/CarcaraTec/IACIT/blob/0fd88f9531d908bbac4b1f549a502565b73f96f3/Apresentacao/Equipe.png)
 
 ## Scrum Master
-- Alan Araújo
- www.linkedin.com/in/alanaraujo1995/
+- Alan Araújo     [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/alanaraujo1995/)
+
 
 ## Product Owner
-- Lucas Rodrigues
-www.linkedin.com/in/lucas-monteiro-56585117b
+- Lucas Rodrigues [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/lucas-monteiro-56585117b)
+
 
 ## Dev team
-- Bianca Tuchtler
-www.linkedin.com/in/biancatuchtler
-- Igor Suzuki
-www.linkedin.com/in/igor-suzuki
+- Bianca Tuchtler [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/biancatuchtler)
+
+- Igor Suzuki     [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/igor-suzuki)
+
 - Luiz Felipe Braga 
 www.luuuizf22@gmail.com
-- Pedro Lucas Rodrigues
-www.linkedin.com/in/pedro-lucas-rodrigues-7116961b5
-- Wesley Ferreira
-www.linkedin.com/in/wesley-ferreira-405440207/
+- Pedro Lucas Rodrigues   [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-lucas-rodrigues-7116961b5)
+
+- Wesley Ferreira         [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/wesley-ferreira-405440207/)
 
 ## Objetivo 🔍
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
@@ -50,7 +49,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 [Manual do Usuário](https://github.com/CarcaraTec/IACIT/blob/ecbc71d5a132c00d5259f645077ca205aadddda8/Documentos/Manual%20do%20Usu%C3%A1rio.pdf)
 
-[Board das tarefas](https://www.notion.so/101794d5e1f7436d9cfea03360385733?v=567a7d20ccf64d58b94f9a8ae0257f99)
+[Board das tarefas](https://www.notion.so/97c17a5a9f174afb83aea8e0fac9c84e?v=11c6c4501b8b4fb4841a6759ad58b5aa)
 
 ## Tecnologias ✔️
 
@@ -69,7 +68,6 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 - `Postman`
 - `GitHub`
 - `Discord`
-
 
 
   
