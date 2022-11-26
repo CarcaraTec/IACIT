@@ -307,6 +307,28 @@ public class HomeController extends Conexao {
         return lista;
     }
 
+    //------------------------RANGE------------------------//
+    @GetMapping(value = "/umidade/range/{estacao}/{data1}/{data2}")
+    public List<Umidade> listarRangeUmidade(@PathVariable("estacao") String codigo, @PathVariable("data1") String Data, @PathVariable("data2") String Data1){
+        Query query = entityManager.createNativeQuery("select * from umidade where umi_data between '"+Data+"' and '"+Data1+"' and fk_estacao_cod_wmo = '"+codigo+"'");
+        List<Object[]> rows = query.getResultList();
+
+        List<Umidade> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Umidade(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (BigDecimal) obj[4],
+                    (BigDecimal) obj[5],
+                    (String) obj[6]
+            ));
+        }
+        return list;
+    }
+
     //-----------------------------------------------------------------------------------------------------------//
 
     //FILTRAR TODOS POR DATA
@@ -366,6 +388,27 @@ public class HomeController extends Conexao {
         return lista;
     }
 
+    //------------------------RANGE------------------------//
+    @GetMapping(value = "/vento/range/{estacao}/{data1}/{data2}")
+    public List<Vento> listarRangeVento(@PathVariable("estacao") String codigo, @PathVariable("data1") String Data, @PathVariable("data2") String Data1){
+        Query query = entityManager.createNativeQuery("select * from vento where ven_data between '"+Data+"' and '"+Data1+"' and fk_estacao_cod_wmo = '"+codigo+"'");
+        List<Object[]> rows = query.getResultList();
+
+        List<Vento> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Vento(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (BigDecimal) obj[4],
+                    (BigDecimal) obj[5],
+                    (String) obj[6]
+            ));
+        }
+        return list;
+    }
 
 }
 //---------------------------------------------------------------------------------------------------------------------//
