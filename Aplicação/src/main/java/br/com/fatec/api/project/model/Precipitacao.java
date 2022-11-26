@@ -2,7 +2,6 @@ package br.com.fatec.api.project.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
