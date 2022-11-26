@@ -21,6 +21,15 @@
   trigger: 'focus'
 })
         </script>
+
+        <!-- Datepicker -->
+
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
         <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
                 integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -221,14 +230,16 @@
                                 <div style="width:50px"></div>
 <!--                                    <input margin="20px" id="datepicker" width="276" onclick="data()"/>-->
 
-                                <input type="text" name="data" class="datepicker" id="datepicker" onclick="data()"/>
+                                <input type="text" name="daterange" class="datepicker" id="datepicker" onclick="data()"/>
+
                                 <script>
-                                    $(document).ready(function () {
-                                        $('.datepicker').datepicker({
-                                        format: 'dd/mm/yyyy',
-                                        language: 'pt-BR'
-                                        });
-                                    });
+                                $(function() {
+                                  $('input[name="daterange"]').daterangepicker({
+                                    opens: 'left'
+                                  }, function(start, end, label) {
+                                    console.log("A new date selection was made: " + start.format('DD-MM-YYYY') + ' to ' + end.format('DD-MM-YYYY'));
+                                  });
+                                });
                                 </script>
 <!--                                    <script>-->
 <!--                                    $('#datepicker').datepicker({-->
