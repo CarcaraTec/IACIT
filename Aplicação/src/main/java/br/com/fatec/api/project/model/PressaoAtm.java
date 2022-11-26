@@ -1,6 +1,7 @@
 package br.com.fatec.api.project.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -14,13 +15,13 @@ public class PressaoAtm {
     private Integer pressaoId;
 
     @Column(name = "pre_atm_estacao")
-    private double pressaoEstacao;
+    private BigDecimal pressaoEstacao;
 
     @Column(name = "pre_atm_max")
-    private double pressaoMax;
+    private BigDecimal pressaoMax;
 
     @Column(name = "pre_atm_min")
-    private double pressaoMin;
+    private BigDecimal pressaoMin;
 
     @Column(name = "pre_data")
     private Date pressaoData;
@@ -31,6 +32,19 @@ public class PressaoAtm {
     @Column(name = "fk_estacao_cod_wmo")
     private String estacao;
 
+    public PressaoAtm() {
+    }
+
+    public PressaoAtm(Integer pressaoId, BigDecimal pressaoEstacao, BigDecimal pressaoMax, BigDecimal pressaoMin, Date pressaoData, Date pressaoHora, String estacao) {
+        this.pressaoId = pressaoId;
+        this.pressaoEstacao = pressaoEstacao;
+        this.pressaoMax = pressaoMax;
+        this.pressaoMin = pressaoMin;
+        this.pressaoData = pressaoData;
+        this.pressaoHora = pressaoHora;
+        this.estacao = estacao;
+    }
+
     public Integer getPressao_id() {
         return pressaoId;
     }
@@ -39,27 +53,27 @@ public class PressaoAtm {
         this.pressaoId = pressao_id;
     }
 
-    public double getPressao_estacao() {
+    public BigDecimal getPressao_estacao() {
         return pressaoEstacao;
     }
 
-    public void setPressao_estacao(double pressao_estacao) {
+    public void setPressao_estacao(BigDecimal pressao_estacao) {
         this.pressaoEstacao = pressao_estacao;
     }
 
-    public double getPressao_max() {
+    public BigDecimal getPressao_max() {
         return pressaoMax;
     }
 
-    public void setPressao_max(double pressao_max) {
+    public void setPressao_max(BigDecimal pressao_max) {
         this.pressaoMax = pressao_max;
     }
 
-    public double getPressao_min() {
+    public BigDecimal getPressao_min() {
         return pressaoMin;
     }
 
-    public void setPressao_min(double pressao_min) {
+    public void setPressao_min(BigDecimal pressao_min) {
         this.pressaoMin = pressao_min;
     }
 

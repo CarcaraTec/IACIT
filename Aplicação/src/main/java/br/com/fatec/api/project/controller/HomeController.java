@@ -110,8 +110,8 @@ public class HomeController extends Conexao {
         }
         return null;
     }
-
-    @GetMapping(value = "/prec/{estacao}/{data1}/{data2}")
+    //------------------------RANGE------------------------//
+    @GetMapping(value = "/precipitacao/range/{estacao}/{data1}/{data2}")
     public List<Precipitacao> listarRangePrecipitacao(@PathVariable("estacao") String codigo, @PathVariable("data1") String precData, @PathVariable("data2") String precData1){
         Query query = entityManager.createNativeQuery("select * from precipitacao where prec_data between '"+precData+"' and '"+precData1+"' and fk_estacao_cod_wmo = '"+codigo+"'");
         List<Object[]> rows = query.getResultList();
@@ -159,6 +159,27 @@ public class HomeController extends Conexao {
         return lista;
     }
 
+    //------------------------RANGE------------------------//
+    @GetMapping(value = "/pressao/range/{estacao}/{data1}/{data2}")
+    public List<PressaoAtm> listarRangePressao(@PathVariable("estacao") String codigo, @PathVariable("data1") String pressaoData, @PathVariable("data2") String pressaoData1){
+        Query query = entityManager.createNativeQuery("select * from pressao_atmosferica where pre_data between '"+pressaoData+"' and '"+pressaoData1+"' and fk_estacao_cod_wmo = '"+codigo+"'");
+        List<Object[]> rows = query.getResultList();
+
+        List<PressaoAtm> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new PressaoAtm(
+                    (Integer) obj[0],
+                    (BigDecimal) obj[1],
+                    (BigDecimal)obj[2],
+                    (BigDecimal) obj[3],
+                    (Date) obj[4],
+                    (Date) obj[5],
+                    (String) obj[6]
+            ));
+        }
+        return list;
+    }
 //---------------------------------------------------------------------------------------------------------------------//
 
     //MOSTRAR RADIAÇÃO
