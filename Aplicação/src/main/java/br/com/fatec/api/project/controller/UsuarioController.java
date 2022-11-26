@@ -12,12 +12,6 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-//    @RequestMapping("/index.html")
-//    public ModelAndView usuario(){
-//        ModelAndView andView = new ModelAndView("index.html");
-//        return andView;
-//    }
-
     private UsuarioService usuarioService;
     public UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;

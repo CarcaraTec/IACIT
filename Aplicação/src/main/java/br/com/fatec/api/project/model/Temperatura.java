@@ -1,6 +1,7 @@
 package br.com.fatec.api.project.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -14,22 +15,22 @@ public class Temperatura {
     private Integer tempId;
 
     @Column(name = "temp_ar")
-    private  double tempAr;
+    private BigDecimal tempAr;
 
     @Column(name = "temp_ponto_orvalho")
-    private double tempPontoOrvalho;
+    private BigDecimal tempPontoOrvalho;
 
     @Column(name = "temp_max")
-    private double tempMax;
+    private BigDecimal tempMax;
 
     @Column(name = "temp_min")
-    private double tempMin;
+    private BigDecimal tempMin;
 
     @Column(name = "temp_orvalho_max")
-    private double tempOrvalhoMax;
+    private BigDecimal tempOrvalhoMax;
 
     @Column(name = "temp_orvalho_min")
-    private double tempOrvalhoMin;
+    private BigDecimal tempOrvalhoMin;
 
     @Column(name = "temp_data")
     private Date tempData;
@@ -40,6 +41,24 @@ public class Temperatura {
     @Column(name = "fk_estacao_cod_wmo")
     private String estacao;
 
+    public Temperatura() {
+    }
+
+    public Temperatura(Integer tempId, Date tempData, Date tempHora, BigDecimal tempAr, BigDecimal tempPontoOrvalho,
+                       BigDecimal tempMax, BigDecimal tempMin, BigDecimal tempOrvalhoMax,
+                       BigDecimal tempOrvalhoMin, String estacao) {
+        this.tempId = tempId;
+        this.tempAr = tempAr;
+        this.tempPontoOrvalho = tempPontoOrvalho;
+        this.tempMax = tempMax;
+        this.tempMin = tempMin;
+        this.tempOrvalhoMax = tempOrvalhoMax;
+        this.tempOrvalhoMin = tempOrvalhoMin;
+        this.tempData = tempData;
+        this.tempHora = tempHora;
+        this.estacao = estacao;
+    }
+
     public Integer getTemp_id() {
         return tempId;
     }
@@ -48,51 +67,51 @@ public class Temperatura {
         this.tempId = temp_id;
     }
 
-    public double getTemp_ar() {
+    public BigDecimal getTemp_ar() {
         return tempAr;
     }
 
-    public void setTemp_ar(double temp_ar) {
+    public void setTemp_ar(BigDecimal temp_ar) {
         this.tempAr = temp_ar;
     }
 
-    public double getTemp_ponto_orvalho() {
+    public BigDecimal getTemp_ponto_orvalho() {
         return tempPontoOrvalho;
     }
 
-    public void setTemp_ponto_orvalho(double temp_ponto_orvalho) {
+    public void setTemp_ponto_orvalho(BigDecimal temp_ponto_orvalho) {
         this.tempPontoOrvalho = temp_ponto_orvalho;
     }
 
-    public double getTemp_max() {
+    public BigDecimal getTemp_max() {
         return tempMax;
     }
 
-    public void setTemp_max(double temp_max) {
+    public void setTemp_max(BigDecimal temp_max) {
         this.tempMax = temp_max;
     }
 
-    public double getTemp_min() {
+    public BigDecimal getTemp_min() {
         return tempMin;
     }
 
-    public void setTemp_min(double temp_min) {
+    public void setTemp_min(BigDecimal temp_min) {
         this.tempMin = temp_min;
     }
 
-    public double getTemp_orvalho_max() {
+    public BigDecimal getTemp_orvalho_max() {
         return tempOrvalhoMax;
     }
 
-    public void setTemp_orvalho_max(double temp_orvalho_max) {
+    public void setTemp_orvalho_max(BigDecimal temp_orvalho_max) {
         this.tempOrvalhoMax = temp_orvalho_max;
     }
 
-    public double getTemp_orvalho_min() {
+    public BigDecimal getTemp_orvalho_min() {
         return tempOrvalhoMin;
     }
 
-    public void setTemp_orvalho_min(double temp_orvalho_min) {
+    public void setTemp_orvalho_min(BigDecimal temp_orvalho_min) {
         this.tempOrvalhoMin = temp_orvalho_min;
     }
 
