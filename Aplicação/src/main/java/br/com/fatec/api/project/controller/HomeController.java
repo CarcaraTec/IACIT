@@ -85,16 +85,16 @@ public class HomeController extends Conexao {
     }
 
     //FILTRAR PRECIPITACAO POR DATA/HORA
-    @GetMapping(value = "/precipitacao/{estacao}/{data}/{hora}")
-    public List<Precipitacao> listarPrecData(@PathVariable("estacao") String codigo, @PathVariable("hora") String precHora, @PathVariable("data") String precData) throws ParseException {
-        SimpleDateFormat form = new SimpleDateFormat("dd-MM-yyyy");
-        Date dataCerta = form.parse(precData);
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-        Date horaCerta = formatter.parse(precHora);
-
-        List<Precipitacao> lista = precRep.findByPrecHora(dataCerta, horaCerta, codigo);
-        return lista;
-    }
+//    @GetMapping(value = "/precipitacao/{estacao}/{data}/{hora}")
+//    public List<Precipitacao> listarPrecData(@PathVariable("estacao") String codigo, @PathVariable("hora") String precHora, @PathVariable("data") String precData) throws ParseException {
+//        SimpleDateFormat form = new SimpleDateFormat("dd-MM-yyyy");
+//        Date dataCerta = form.parse(precData);
+//        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+//        Date horaCerta = formatter.parse(precHora);
+//
+//        List<Precipitacao> lista = precRep.findByPrecHora(dataCerta, horaCerta, codigo);
+//        return lista;
+//    }
 
     private LocalDate formataDate(Object o) {
         if (!Objects.isNull(o)) {
