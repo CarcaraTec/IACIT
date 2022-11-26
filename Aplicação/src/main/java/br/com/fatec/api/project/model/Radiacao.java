@@ -1,6 +1,7 @@
 package br.com.fatec.api.project.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -14,7 +15,7 @@ public class Radiacao {
     private Integer radId;
 
     @Column(name = "rad_global")
-    private double radGlobal;
+    private BigDecimal radGlobal;
 
     @Column(name = "rad_data")
     private Date radData;
@@ -25,6 +26,17 @@ public class Radiacao {
     @Column(name = "fk_estacao_cod_wmo")
     private String estacao;
 
+    public Radiacao() {
+    }
+
+    public Radiacao(Integer radId, Date radData, Date radHora, BigDecimal radGlobal, String estacao) {
+        this.radId = radId;
+        this.radGlobal = radGlobal;
+        this.radData = radData;
+        this.radHora = radHora;
+        this.estacao = estacao;
+    }
+
     public Integer getRad_id() {
         return radId;
     }
@@ -33,11 +45,11 @@ public class Radiacao {
         this.radId = rad_id;
     }
 
-    public double getRad_global() {
+    public BigDecimal getRad_global() {
         return radGlobal;
     }
 
-    public void setRad_global(double rad_global) {
+    public void setRad_global(BigDecimal rad_global) {
         this.radGlobal = rad_global;
     }
 

@@ -30,6 +30,9 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+
+
         <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
                 integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -44,71 +47,72 @@
         </script>
         <script>
     function precipitacao(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value.replaceAll(' ', '');
+        var dataSlice = data.split("-");
+        console.log(data)
+        console.log(dataSlice[0])
+        console.log(dataSlice[1])
+        if(dataSlice[0] = dataSlice[1]){
+            data = dataSlice[0];
+        }
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"="+dataFull;
 }
     function pressao(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=pressao="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=pressao="+words[1].toUpperCase()+"="+dataFull;
 }
     function radiacao(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=radiacao="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=radiacao="+words[1].toUpperCase()+"="+dataFull;
 }
     function temperatura(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=temperatura="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=temperatura="+words[1].toUpperCase()+"="+dataFull;
 }
     function umidade(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=umidade="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=umidade="+words[1].toUpperCase()+"="+dataFull;
 }
     function vento(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=vento="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=vento="+words[1].toUpperCase()+"="+dataFull;
 }
 
     function verMes(){
-    var doc = window.location.pathname.slice(8);
-    const dado = doc.split('=');
-    const data = dado[2].split('-');
-    window.location.href = "charts="+dado[0]+"-mes="+dado[1]+"="+data[1];
+        var doc = window.location.pathname.slice(8);
+        const dado = doc.split('=');
+        const data = dado[2].split('-');
+        window.location.href = "charts="+dado[0]+"-mes="+dado[1]+"="+data[1];
     }
 </script>
     </head>
@@ -235,7 +239,37 @@
                                 <script>
                                 $(function() {
                                   $('input[name="daterange"]').daterangepicker({
-                                    opens: 'left'
+                                    opens: 'left',
+                                    "showDropdowns": true,
+                                    "locale":{"direction": "ltr",
+                                        "format": "DD/MM/YYYY",
+                                        "separator": " - ",
+                                        "fromLabel": "De",
+                                        "toLabel": "até",
+                                        "customRangeLabel": "Custom",
+                                        "daysOfWeek": [
+                                            "Dom",
+                                            "Seg",
+                                            "Ter",
+                                            "Qua",
+                                            "Qui",
+                                            "Sex",
+                                            "Sáb"
+                                        ],
+                                        "monthNames": [
+                                            "Janeiro",
+                                            "Fevereiro",
+                                            "Março",
+                                            "Abril",
+                                            "Maio",
+                                            "Junho",
+                                            "Julho",
+                                            "Agosto",
+                                            "Setembro",
+                                            "Outubro",
+                                            "Novembro",
+                                            "Dezembro"
+                                        ]},
                                   }, function(start, end, label) {
                                     console.log("A new date selection was made: " + start.format('DD-MM-YYYY') + ' to ' + end.format('DD-MM-YYYY'));
                                   });

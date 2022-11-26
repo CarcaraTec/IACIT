@@ -47,71 +47,72 @@
         </script>
         <script>
     function precipitacao(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value.replaceAll(' ', '');
+        var dataSlice = data.split("-");
+        console.log(data)
+        console.log(dataSlice[0])
+        console.log(dataSlice[1])
+        if(dataSlice[0] = dataSlice[1]){
+            data = dataSlice[0];
+        }
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"="+dataFull;
 }
     function pressao(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=pressao="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=pressao="+words[1].toUpperCase()+"="+dataFull;
 }
     function radiacao(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=radiacao="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=radiacao="+words[1].toUpperCase()+"="+dataFull;
 }
     function temperatura(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=temperatura="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=temperatura="+words[1].toUpperCase()+"="+dataFull;
 }
     function umidade(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=umidade="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=umidade="+words[1].toUpperCase()+"="+dataFull;
 }
     function vento(){
-    var data = document.getElementById('datepicker').value;
-    var data1 = data.replace('/', '-');
-    var dataFull = data1.replace('/', '-');
+        var data = document.getElementById('datepicker').value;
+        var dataFull = data.replaceAll('/', '-');
 
-    var estacao = document.getElementById('languages-select').value;
-    var estacao1 = document.getElementById('select1').value;
-    const words = estacao.split('|');
-    window.location.href = "charts=vento="+words[1].toUpperCase()+"="+dataFull;
+        var estacao = document.getElementById('languages-select').value;
+        var estacao1 = document.getElementById('select1').value;
+        const words = estacao.split('|');
+        window.location.href = "charts=vento="+words[1].toUpperCase()+"="+dataFull;
 }
 
     function verMes(){
-    var doc = window.location.pathname.slice(8);
-    const dado = doc.split('=');
-    const data = dado[2].split('-');
-    window.location.href = "charts="+dado[0]+"-mes="+dado[1]+"="+data[1];
+        var doc = window.location.pathname.slice(8);
+        const dado = doc.split('=');
+        const data = dado[2].split('-');
+        window.location.href = "charts="+dado[0]+"-mes="+dado[1]+"="+data[1];
     }
 </script>
     </head>
@@ -239,6 +240,7 @@
                                 $(function() {
                                   $('input[name="daterange"]').daterangepicker({
                                     opens: 'left',
+                                    "showDropdowns": true,
                                     "locale":{"direction": "ltr",
                                         "format": "DD/MM/YYYY",
                                         "separator": " - ",

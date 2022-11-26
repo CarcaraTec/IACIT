@@ -35,7 +35,7 @@ public class PressaoAtm {
     public PressaoAtm() {
     }
 
-    public PressaoAtm(Integer pressaoId, BigDecimal pressaoEstacao, BigDecimal pressaoMax, BigDecimal pressaoMin, Date pressaoData, Date pressaoHora, String estacao) {
+    public PressaoAtm(Integer pressaoId, Date pressaoData, Date pressaoHora, BigDecimal pressaoEstacao, BigDecimal pressaoMax, BigDecimal pressaoMin, String estacao) {
         this.pressaoId = pressaoId;
         this.pressaoEstacao = pressaoEstacao;
         this.pressaoMax = pressaoMax;
