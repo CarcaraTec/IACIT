@@ -51,6 +51,8 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 [Board das tarefas](https://salt-vault-8cc.notion.site/97c17a5a9f174afb83aea8e0fac9c84e?v=11c6c4501b8b4fb4841a6759ad58b5aa)
 
+[User Stories](https://github.com/CarcaraTec/IACIT/blob/ec45837845d689547f6f69ba4bc49cc1bb73cba5/Apresentacao/User%20stories.jpeg)
+
 ## Tecnologias ✔️
 
 - `Java`
