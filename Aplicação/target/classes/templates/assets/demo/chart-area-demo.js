@@ -26,10 +26,8 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
             console.log(document.getElementById("languages-select").value)
 if(dado[0]=="precipitacao"){
 $(document).ready(function(){
-    console.log(dado[1])
-    console.log("/precipitacao/"+doc+"/"+dado[2])
-    $.getJSON("/precipitacao/"+dado[1]+"/"+dado[2],function(data){
-
+    $.getJSON("/precipitacao/range/"+dado[1]+"/"+dado[2]+"/"+dado[3],function(data){
+    console.log("tamanho do dado: "+data.length)
     if(dado[1]!=null){
 
         document.getElementById("select1").innerHTML = "";
@@ -44,17 +42,17 @@ $(document).ready(function(){
     var arrayHora = [];
     var arrayTotal = [];
 
-for (var i = 0; i<24; i++){
-
-    arrayHora.push(data[i].prec_hora.slice(11, -13));
+for (var i = 0; i<data.length; i++){
+    const prec_data = new Date(data[i].prec_data);
+    prec_data.setDate(prec_data.getDate()+1);
+    arrayHora.push(prec_data.toLocaleDateString("pt-BR")+" - "+data[i].prec_hora.slice(0, -6)+"h");
     if(data[i].prec_total==-999){
         arrayTotal.push(null);
     }else{
         arrayTotal.push(data[i].prec_total);
     }
 }
-//card-header
-// Area Chart Example
+
 var myLineChart = 0;
 var ctx = document.getElementById("myAreaChart");
 myLineChart = new Chart(ctx, {
@@ -66,13 +64,13 @@ myLineChart = new Chart(ctx, {
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointRadius: 2,
+      pointBackgroundColor: "rgba(0, 255, 255)",
       pointBorderColor: "rgba(255,255,255,0.8)",
-      pointHoverRadius: 5,
+      pointHoverRadius: 1,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 50,
-      pointBorderWidth: 2,
+      pointHitRadius: 1,
+      pointBorderWidth: 1,
       data: arrayTotal,
     }],
   },

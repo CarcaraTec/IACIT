@@ -32,6 +32,9 @@ public class Umidade {
     @Column(name = "fk_estacao_cod_wmo")
     private String estacao;
 
+    public Umidade() {
+    }
+
     public Umidade(Integer umiId, Date umiData, Date umiHora, BigDecimal umiMax, BigDecimal umiMin, BigDecimal umiAr, String estacao) {
         this.umiId = umiId;
         this.umiData = umiData;
