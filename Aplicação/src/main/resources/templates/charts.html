@@ -58,13 +58,11 @@
     function pressao(){
         var data = document.getElementById('datepicker').value.replaceAll(' ', '');
         var dataSlice = data.split("-");
-        console.log(data)
         console.log(dataSlice[0])
         console.log(dataSlice[1])
-        if(dataSlice[0] = dataSlice[1]){
-            data = dataSlice[0];
-        }
-        var dataFull = data.replaceAll('/', '-');
+        var dataMiddle = data.replaceAll('-', '=');
+        console.log(dataMiddle)
+        var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
         var estacao1 = document.getElementById('select1').value;
@@ -74,13 +72,11 @@
     function radiacao(){
         var data = document.getElementById('datepicker').value.replaceAll(' ', '');
         var dataSlice = data.split("-");
-        console.log(data)
         console.log(dataSlice[0])
         console.log(dataSlice[1])
-        if(dataSlice[0] = dataSlice[1]){
-            data = dataSlice[0];
-        }
-        var dataFull = data.replaceAll('/', '-');
+        var dataMiddle = data.replaceAll('-', '=');
+        console.log(dataMiddle)
+        var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
         var estacao1 = document.getElementById('select1').value;
@@ -90,13 +86,11 @@
     function temperatura(){
         var data = document.getElementById('datepicker').value.replaceAll(' ', '');
         var dataSlice = data.split("-");
-        console.log(data)
         console.log(dataSlice[0])
         console.log(dataSlice[1])
-        if(dataSlice[0] = dataSlice[1]){
-            data = dataSlice[0];
-        }
-        var dataFull = data.replaceAll('/', '-');
+        var dataMiddle = data.replaceAll('-', '=');
+        console.log(dataMiddle)
+        var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
         var estacao1 = document.getElementById('select1').value;
@@ -106,13 +100,11 @@
     function umidade(){
         var data = document.getElementById('datepicker').value.replaceAll(' ', '');
         var dataSlice = data.split("-");
-        console.log(data)
         console.log(dataSlice[0])
         console.log(dataSlice[1])
-        if(dataSlice[0] = dataSlice[1]){
-            data = dataSlice[0];
-        }
-        var dataFull = data.replaceAll('/', '-');
+        var dataMiddle = data.replaceAll('-', '=');
+        console.log(dataMiddle)
+        var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
         var estacao1 = document.getElementById('select1').value;
@@ -122,13 +114,11 @@
     function vento(){
         var data = document.getElementById('datepicker').value.replaceAll(' ', '');
         var dataSlice = data.split("-");
-        console.log(data)
         console.log(dataSlice[0])
         console.log(dataSlice[1])
-        if(dataSlice[0] = dataSlice[1]){
-            data = dataSlice[0];
-        }
-        var dataFull = data.replaceAll('/', '-');
+        var dataMiddle = data.replaceAll('-', '=');
+        console.log(dataMiddle)
+        var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
         var estacao1 = document.getElementById('select1').value;
@@ -279,7 +269,6 @@
                                         "separator": " - ",
                                         "fromLabel": "De",
                                         "toLabel": "até",
-                                        "customRangeLabel": "Custom",
                                         "daysOfWeek": [
                                             "Dom",
                                             "Seg",
