@@ -20,23 +20,28 @@ $(document).ready(function(){
 
 
                 $(document).ready(function(){
-                        $.getJSON("/SE/SP",function(data2){
+                        $.getJSON("/estacoes",function(data2){
                         console.log("SP dado 1: "+data2[0].nome_estacao)
+                        for(var i = 0;i<5;i++){
                             function nomeEstacao(nomear){
 
-                                 return nomear.codigo == estacoes[0];
+                                 return nomear.codigo == estacoes[i];
                                       }
                                  var esta = data2.find(nomeEstacao);
-                                 const prec_data = new Date(tempMin[0].temp_data);
+                                 const prec_data = new Date(tempMin[i].temp_data);
                                      prec_data.setDate(prec_data.getDate()+1);
 
-                                 $("#tempMinEstacao").prepend("Nome da Estação: "+esta.nome_estacao)
-                                 $("#tempMin").prepend("Temperatura Mínima: "+tempMin[0].temp_min+"°C")
-                                 $("#tempMax").prepend("Temperatura Máxima: "+tempMin[0].temp_max+"°C")
-                                 $("#tempMinOrvalhoMin").prepend("Ponto de Orvalho Mínimo: "+tempMin[0].temp_orvalho_min+"°C")
-                                 $("#tempMinOrvalho").prepend("Ponto de Orvalho: "+tempMin[0].temp_ponto_orvalho+"°C")
-                                 $("#tempMinOrvalhoMax").prepend("Ponto de Orvalho Máximo: "+tempMin[0].temp_orvalho_max+"°C")
-                                 $("#tempData").prepend("DATA: "+prec_data.toLocaleDateString("pt-BR"))
+                                 $("#tempMinEstacao"+i).prepend(esta.nome_estacao)
+                                 $("#tempMin"+i).prepend("Temperatura Mínima: "+tempMin[i].temp_min+"°C")
+                                 $("#tempMax"+i).prepend("Temperatura Máxima: "+tempMin[i].temp_max+"°C")
+                                 $("#tempMinOrvalhoMin"+i).prepend("Ponto de Orvalho Mínimo: "+tempMin[i].temp_orvalho_min+"°C")
+                                 $("#tempMinOrvalho"+i).prepend("Ponto de Orvalho: "+tempMin[i].temp_ponto_orvalho+"°C")
+                                 $("#tempMinOrvalhoMax"+i).prepend("Ponto de Orvalho Máximo: "+tempMin[i].temp_orvalho_max+"°C")
+                                 $("#tempData"+i).prepend("DATA: "+prec_data.toLocaleDateString("pt-BR"))
+
+                                const a = document.querySelector("#verDetalhes"+i);
+                                a.href = "/charts=temperatura="+tempMin[i].estacao+"="+tempMin[i].temp_data+"="+tempMin[i].temp_data;
+                                    }
 
                             });
                         });

@@ -58,13 +58,28 @@ public class HomeController extends Conexao {
         return andView;
     }
 
+    //Listar estações
+    @GetMapping(value = "/estacoes")
+    public List<Estacao> listarEstacoes() {
+        List<Estacao> lista = repository.findAll();
+        return lista;
+    }
+
+    //Listar Estados da região
+    @GetMapping(value = "/estados/{regiao}")
+    public List<Estado> listarEstados(@PathVariable("regiao") String regiao){
+        List<Estado> lista = EstRep.findByRegiao(regiao);
+        return lista;
+    }
 
     //FILTRO POR ESTADO
     @GetMapping(value = "/{regiao}/{estado}")
-    public List<Estacao> listarEstado(@PathVariable("regiao") String regiao, @PathVariable("estado") String estado) {
+    public List<Estacao> listarEstacoes(@PathVariable("regiao") String regiao, @PathVariable("estado") String estado) {
         List<Estacao> lista = repository.findByEstado(regiao, estado);
         return lista;
     }
+
+
 
 //---------------------------------------------------------------------------------------------------------------------//
 

@@ -51,7 +51,6 @@
         var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
-        var estacao1 = document.getElementById('select1').value;
         const words = estacao.split('|');
         window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"="+dataFull;
 }
@@ -65,7 +64,6 @@
         var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
-        var estacao1 = document.getElementById('select1').value;
         const words = estacao.split('|');
         window.location.href = "charts=pressao="+words[1].toUpperCase()+"="+dataFull;
 }
@@ -79,7 +77,6 @@
         var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
-        var estacao1 = document.getElementById('select1').value;
         const words = estacao.split('|');
         window.location.href = "charts=radiacao="+words[1].toUpperCase()+"="+dataFull;
 }
@@ -93,7 +90,6 @@
         var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
-        var estacao1 = document.getElementById('select1').value;
         const words = estacao.split('|');
         window.location.href = "charts=temperatura="+words[1].toUpperCase()+"="+dataFull;
 }
@@ -107,7 +103,6 @@
         var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
-        var estacao1 = document.getElementById('select1').value;
         const words = estacao.split('|');
         window.location.href = "charts=umidade="+words[1].toUpperCase()+"="+dataFull;
 }
@@ -121,7 +116,6 @@
         var dataFull = dataMiddle.replaceAll('/', '-');
 
         var estacao = document.getElementById('languages-select').value;
-        var estacao1 = document.getElementById('select1').value;
         const words = estacao.split('|');
         window.location.href = "charts=vento="+words[1].toUpperCase()+"="+dataFull;
 }
@@ -244,16 +238,31 @@
                         </ol>
                         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                             <div class="input-group">
-                                <div class="col">
-                                    <select class="form-select" style="width:300px" id="languages-select">
-                                        <option id="select1" value="abc" disabled="" selected="">Estações:</option>
+                                <div class="col-2">
+                                    <select class="form-select" style="width:100px" id="regioes-select" onclick="selecionar()">
+                                        <option id="selectRegiao" value="abc" disabled="" selected="">Região</option>
+                                        <option id="n" value="N">N</option>
+                                        <option value="NE">NE</option>
+                                        <option value="CO">CO</option>
+                                        <option value="SE">SE</option>
+                                        <option value="S">S</option>
                                     </select>
                                 </div>
-                                <div style="width:50px"></div>
+                                <div class="col-2">
+                                    <select class="form-select" style="width:100px" id="estados-select" onclick="selecionarEst()">
+                                        <option id="selectEstado" value="abc" disabled="" selected="Estado">Estado</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select" style="width:300px" id="languages-select">
+                                        <option id="select1" value="abc" disabled="" selected="">Estações</option>
+                                    </select>
+                                </div>
+
 <!--                                    <input margin="20px" id="datepicker" width="276" onclick="data()"/>-->
-
+                                <div class="col-2">
                                 <input type="text" name="daterange" class="datepicker" id="datepicker" onclick="data()"/>
-
+                                </div>
                                 <script>
                                 $(function() {
                                   $('input[name="daterange"]').daterangepicker({
