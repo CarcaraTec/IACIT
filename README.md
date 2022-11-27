@@ -30,10 +30,10 @@ www.luuuizf22@gmail.com
 Sistema que permita realizar a importação dos dados meteorológicos, bem como armazená-los em uma base de dados, para posteriormente gerar os relatórios desejados pelos clientes.
 
 ## Product Backlog
-![slide3](https://github.com/CarcaraTec/IACIT/blob/Sprint-4/Apresentacao/Product%20Backlog.jpg)
+![slide3](https://github.com/CarcaraTec/IACIT/blob/25c2429f5841af2436ba1c1aca430f81d490b452/Apresentacao/Product_backlog.png)
 
 ## Proposta de Entrega
-![slide4](https://github.com/CarcaraTec/IACIT/blob/Sprint-4/Apresentacao/Proposta%20de%20entrega.jpg)
+![slide4](https://github.com/CarcaraTec/IACIT/blob/25c2429f5841af2436ba1c1aca430f81d490b452/Apresentacao/Proposta_de_entrega.png)
 
 ## DER
 ![slide6](https://github.com/CarcaraTec/IACIT/blob/32716bda88ca3134b6c54f3f00f83557940063d3/DataBase/modelagem_img1.jpeg)
@@ -51,7 +51,7 @@ Sistema que permita realizar a importação dos dados meteorológicos, bem como 
 
 [Board das tarefas](https://salt-vault-8cc.notion.site/97c17a5a9f174afb83aea8e0fac9c84e?v=11c6c4501b8b4fb4841a6759ad58b5aa)
 
-[User Stories](https://github.com/CarcaraTec/IACIT/blob/ec45837845d689547f6f69ba4bc49cc1bb73cba5/Apresentacao/User%20stories.jpeg)
+[User Stories](https://github.com/CarcaraTec/IACIT/blob/25c2429f5841af2436ba1c1aca430f81d490b452/Apresentacao/User_Stories.jpeg)
 
 ## Tecnologias ✔️
 
