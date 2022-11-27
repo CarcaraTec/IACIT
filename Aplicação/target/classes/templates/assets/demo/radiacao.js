@@ -8,14 +8,6 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
             $.getJSON("/SE/SP",function(data){
                 const dado = doc.split('=');
                 const languagesSelect = document.getElementById("languages-select");
-//                var languagesList = [];
-//                for (var i = 0; i<data.length; i++){
-//                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
-//                }
-//                languagesList.forEach((language) => {
-//                  option = new Option(language, language.toLowerCase());
-//                  languagesSelect.options[languagesSelect.options.length] = option;
-//                });
                 const inventory = data;
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
@@ -25,7 +17,7 @@ if(dado[0]=="radiacao"){
 $(document).ready(function(){
     console.log(dado[1])
     console.log("/radiacao/"+doc+"/"+dado[2])
-    $.getJSON("/radiacao/"+dado[1]+"/"+dado[2],function(data){
+    $.getJSON("/radiacao/range/"+dado[1]+"/"+dado[2]+"/"+dado[3],function(data){
 
     if(dado[1]!=null){
 
@@ -41,9 +33,11 @@ $(document).ready(function(){
     var arrayRadGlobal = [];
 
 
-for (var i = 0; i<24; i++){
+for (var i = 0; i<data.length; i++){
 
-    arrayHora.push(data[i].rad_hora.slice(11, -13));
+    const rad_data = new Date(data[i].rad_data);
+    rad_data.setDate(rad_data.getDate()+1);
+    arrayHora.push(rad_data.toLocaleDateString("pt-BR")+" - "+data[i].rad_hora.slice(0, -6)+"h");
     if(data[i].rad_global==-999){
         arrayRadGlobal.push(null);
     }else{
@@ -63,13 +57,13 @@ myLineChart = new Chart(ctx, {
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
+      pointRadius: 1,
       pointBackgroundColor: "rgba(2,117,216,1)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
-      pointHoverRadius: 5,
+      pointBorderColor: "rgba(2,117,216,1)",
+      pointHoverRadius: 1,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 50,
-      pointBorderWidth: 2,
+      pointHitRadius: 40,
+      pointBorderWidth: 1,
       data: arrayRadGlobal,
     }],
   },
@@ -83,7 +77,7 @@ myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 30
         }
       }],
       yAxes: [{

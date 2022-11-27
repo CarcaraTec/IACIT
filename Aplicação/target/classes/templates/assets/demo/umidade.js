@@ -25,7 +25,7 @@ if(dado[0]=="umidade"){
 $(document).ready(function(){
     console.log(dado[1])
     console.log("/umidade/"+doc+"/"+dado[2])
-    $.getJSON("/umidade/"+dado[1]+"/"+dado[2],function(data){
+    $.getJSON("/umidade/range/"+dado[1]+"/"+dado[2]+"/"+dado[3],function(data){
 
     if(dado[1]!=null){
 
@@ -43,9 +43,12 @@ $(document).ready(function(){
     var arrayUmiMin = [];
 
 
-for (var i = 0; i<24; i++){
+for (var i = 0; i<data.length; i++){
 
-    arrayHora.push(data[i].umi_hora.slice(11, -13));
+    const umi_data = new Date(data[i].umi_data);
+    umi_data.setDate(umi_data.getDate()+1);
+    arrayHora.push(umi_data.toLocaleDateString("pt-BR")+" - "+data[i].umi_hora.slice(0, -6)+"h");
+
     if(data[i].umi_ar==-999){
         arrayUmiAr.push(null);
     }else{
@@ -77,13 +80,13 @@ myLineChart = new Chart(ctx, {
       lineTension: 0.3,
       backgroundColor: "rgba(255,99,71,0)",
       borderColor: "rgba(255,140,0,1)",
-      pointRadius: 5,
+      pointRadius: 1,
       pointBackgroundColor: "rgba(255,140,0,1)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
-      pointHoverRadius: 5,
+      pointBorderColor: "rgba(255,140,0,1)",
+      pointHoverRadius: 1,
       pointHoverBackgroundColor: "rgba(255,140,0,1)",
-      pointHitRadius: 50,
-      pointBorderWidth: 2,
+      pointHitRadius: 40,
+      pointBorderWidth: 1,
       data: arrayUmiAr,
     },
     {
@@ -91,13 +94,13 @@ myLineChart = new Chart(ctx, {
           lineTension: 0.3,
           backgroundColor: "rgba(255,99,71,0)",
           borderColor: "rgb(255,0,0)",
-          pointRadius: 5,
+          pointRadius: 1,
           pointBackgroundColor: "rgb(255,0,0)",
-          pointBorderColor: "rgba(255,255,255,0.8)",
-          pointHoverRadius: 5,
+          pointBorderColor: "rgba(255,0,0)",
+          pointHoverRadius: 1,
           pointHoverBackgroundColor: "rgb(255,0,0)",
-          pointHitRadius: 50,
-          pointBorderWidth: 2,
+          pointHitRadius: 40,
+          pointBorderWidth: 1,
           data: arrayUmiMax,
         },
         {
@@ -105,13 +108,13 @@ myLineChart = new Chart(ctx, {
               lineTension: 0.3,
               backgroundColor: "rgba(255,99,71,0)",
               borderColor: "rgba(2,117,216,1)",
-              pointRadius: 5,
+              pointRadius: 1,
               pointBackgroundColor: "rgba(2,117,216,1)",
-              pointBorderColor: "rgba(255,255,255,0.8)",
-              pointHoverRadius: 5,
+              pointBorderColor: "rgba(2,117,216,1)",
+              pointHoverRadius: 1,
               pointHoverBackgroundColor: "rgba(2,117,216,1)",
-              pointHitRadius: 50,
-              pointBorderWidth: 2,
+              pointHitRadius: 40,
+              pointBorderWidth: 1,
               data: arrayUmiMin,
             }],
   },
@@ -125,7 +128,7 @@ myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 30
         }
       }],
       yAxes: [{
