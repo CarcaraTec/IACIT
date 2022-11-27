@@ -276,6 +276,30 @@ public class HomeController extends Conexao {
         }
         return list;
     }
+    //------------------------RANGE------------------------//
+    @GetMapping(value = "/temperatura_min")
+    public List<Temperatura> listarRangeTemperaturaMin(){
+        Query query = entityManager.createNativeQuery("SELECT * FROM temperatura WHERE temp_min < -1 and temp_min > -100 ORDER BY temp_min ASC");
+        List<Object[]> rows = query.getResultList();
+
+        List<Temperatura> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Temperatura(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (BigDecimal) obj[4],
+                    (BigDecimal) obj[5],
+                    (BigDecimal) obj[6],
+                    (BigDecimal) obj[7],
+                    (BigDecimal) obj[8],
+                    (String) obj[9]
+            ));
+        }
+        return list;
+    }
 
 //---------------------------------------------------------------------------------------------------------------------//
 

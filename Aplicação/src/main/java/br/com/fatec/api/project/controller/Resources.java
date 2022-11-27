@@ -37,6 +37,12 @@ public class Resources {
         return andView;
     }
 
+    @GetMapping(value = "/js/temperaturaMinimo.js")
+    public ModelAndView temperaturaMinimo() {
+        ModelAndView andView = new ModelAndView("js/temperaturaMinimo.js");
+        return andView;
+    }
+
     @GetMapping(value = "/assets/demo/chart-area-demo.js")
     public ModelAndView chartarea() {
         ModelAndView andView = new ModelAndView("assets/demo/chart-area-demo.js");
