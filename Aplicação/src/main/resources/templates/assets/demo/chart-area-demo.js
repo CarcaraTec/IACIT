@@ -6,16 +6,8 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
         $(document).ready(function(){
             $.getJSON("/SE/SP",function(data){
                 const dado = doc.split('=');
-                document.getElementById('datepicker').value = dado[2].replaceAll("-","/");
+                document.getElementById('datepicker').value = dado[2].replaceAll("-","/") + " - " +dado[3].replaceAll("-","/");
                 const languagesSelect = document.getElementById("languages-select");
-//                var languagesList = [];
-//                for (var i = 0; i<data.length; i++){
-//                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
-//                }
-//                languagesList.forEach((language) => {
-//                  option = new Option(language, language.toLowerCase());
-//                  languagesSelect.options[languagesSelect.options.length] = option;
-//                });
                 const inventory = data;
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
@@ -64,12 +56,12 @@ myLineChart = new Chart(ctx, {
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      pointRadius: 2,
-      pointBackgroundColor: "rgba(0, 255, 255)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointRadius: 1,
+      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBorderColor: "rgba(2,117,216,1)",
       pointHoverRadius: 1,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 1,
+      pointHitRadius: 40,
       pointBorderWidth: 1,
       data: arrayTotal,
     }],
@@ -84,7 +76,7 @@ myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 30
         }
       }],
       yAxes: [{
