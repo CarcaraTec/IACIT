@@ -20,9 +20,9 @@ $(document).ready(function(){
 
 
                 $(document).ready(function(){
-                        $.getJSON("/SE/SP",function(data2){
+                        $.getJSON("/estacoes",function(data2){
                         console.log("SP dado 1: "+data2[0].nome_estacao)
-                        for(var i = 0;i<estacoes.length;i++){
+                        for(var i = 0;i<5;i++){
                             function nomeEstacao(nomear){
 
                                  return nomear.codigo == estacoes[i];

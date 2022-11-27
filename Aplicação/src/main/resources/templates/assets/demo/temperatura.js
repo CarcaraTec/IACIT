@@ -5,7 +5,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
         var doc = window.location.pathname.slice(8);
         $(document).ready(function(){
-            $.getJSON("/SE/SP",function(data){
+            $.getJSON("/estacoes",function(data){
                 const dado = doc.split('=');
                 const languagesSelect = document.getElementById("languages-select");
 //                var languagesList = [];
