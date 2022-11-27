@@ -117,10 +117,10 @@ myLineChart = new Chart(ctx, {
             borderColor: "rgba(2,117,216,1)",
             pointRadius: 1,
             pointBackgroundColor: "rgba(2,117,216,1)",
-            pointBorderColor: "rgba(255,255,255,0.8)",
+            pointBorderColor: "rgba(2,117,216,1)",
             pointHoverRadius: 1,
             pointHoverBackgroundColor: "rgba(2,117,216,1)",
-            pointHitRadius: 1,
+            pointHitRadius: 30,
             pointBorderWidth: 1,
       data: arrayVentoRajada,
     }

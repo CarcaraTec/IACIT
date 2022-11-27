@@ -64,12 +64,12 @@ myLineChart = new Chart(ctx, {
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      pointRadius: 2,
-      pointBackgroundColor: "rgba(0, 255, 255)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointRadius: 1,
+      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBorderColor: "rgba(2,117,216,1)",
       pointHoverRadius: 1,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 1,
+      pointHitRadius: 40,
       pointBorderWidth: 1,
       data: arrayTotal,
     }],
@@ -84,7 +84,7 @@ myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 30
         }
       }],
       yAxes: [{
