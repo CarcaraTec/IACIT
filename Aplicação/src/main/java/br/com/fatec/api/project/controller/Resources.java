@@ -37,9 +37,27 @@ public class Resources {
         return andView;
     }
 
+    @GetMapping(value = "/js/selectPop.js")
+    public ModelAndView selectPop() {
+        ModelAndView andView = new ModelAndView("js/selectPop.js");
+        return andView;
+    }
+
     @GetMapping(value = "/js/temperaturaMinimo.js")
     public ModelAndView temperaturaMinimo() {
         ModelAndView andView = new ModelAndView("js/temperaturaMinimo.js");
+        return andView;
+    }
+
+    @GetMapping(value = "/js/umidadeMin.js")
+    public ModelAndView umidadeMin() {
+        ModelAndView andView = new ModelAndView("js/umidadeMin.js");
+        return andView;
+    }
+
+    @GetMapping(value = "/js/temperaturaMaximo.js")
+    public ModelAndView temperaturaMaximo() {
+        ModelAndView andView = new ModelAndView("js/temperaturaMaximo.js");
         return andView;
     }
 
@@ -100,6 +118,16 @@ public class Resources {
     @GetMapping(value = "/unlog.js")
     public ModelAndView unlogjs() {
         ModelAndView andView = new ModelAndView("unlog.js");
+        return andView;
+    }
+    @GetMapping(value = "/password.html")
+    public ModelAndView passwordHTML() {
+        ModelAndView andView = new ModelAndView("password.html");
+        return andView;
+    }
+    @GetMapping(value = "/password.js")
+    public ModelAndView password() {
+        ModelAndView andView = new ModelAndView("password.js");
         return andView;
     }
 

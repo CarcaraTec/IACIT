@@ -16,6 +16,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
             $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
             document.getElementById('select1').value = inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")";
             console.log(document.getElementById("languages-select").value)
+
 if(dado[0]=="precipitacao"){
 $(document).ready(function(){
     $.getJSON("/precipitacao/range/"+dado[1]+"/"+dado[2]+"/"+dado[3],function(data){
@@ -26,6 +27,20 @@ $(document).ready(function(){
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
 
 
+        document.getElementById("selectEstado").innerHTML = "";
+
+        $("#selectEstado").append(inventory.find(isCherries).estado);
+
+        $(document).ready(function(){
+            $.getJSON("/estados",function(regiao){
+                function procurarEstado(estado) {
+                 return estado.nome_estado === inventory.find(isCherries).estado;
+                 }
+                 document.getElementById("selectRegiao").innerHTML = "";
+                 $("#selectRegiao").append(regiao.find(procurarEstado).regiao);
+
+            });
+            });
         document.getElementById('precipitacao1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
 
