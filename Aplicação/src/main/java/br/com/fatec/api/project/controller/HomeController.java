@@ -71,6 +71,11 @@ public class HomeController extends Conexao {
         List<Estado> lista = EstRep.findByRegiao(regiao);
         return lista;
     }
+    @GetMapping(value = "/estados")
+    public List<Estado> listarEstadosAll(){
+        List<Estado> lista = EstRep.findAll();
+        return lista;
+    }
 
     //FILTRO POR ESTADO
     @GetMapping(value = "/{regiao}/{estado}")
@@ -316,6 +321,30 @@ public class HomeController extends Conexao {
         return list;
     }
 
+    @GetMapping(value = "/temperatura_max")
+    public List<Temperatura> listarRangeTemperaturaMax(){
+        Query query = entityManager.createNativeQuery("SELECT * FROM temperatura WHERE temp_max > 40 ORDER BY temp_min DESC");
+        List<Object[]> rows = query.getResultList();
+
+        List<Temperatura> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Temperatura(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (BigDecimal) obj[4],
+                    (BigDecimal) obj[5],
+                    (BigDecimal) obj[6],
+                    (BigDecimal) obj[7],
+                    (BigDecimal) obj[8],
+                    (String) obj[9]
+            ));
+        }
+        return list;
+    }
+
 //---------------------------------------------------------------------------------------------------------------------//
 
     //MOSTRAR UMIDADE
@@ -350,6 +379,28 @@ public class HomeController extends Conexao {
     @GetMapping(value = "/umidade/range/{estacao}/{data1}/{data2}")
     public List<Umidade> listarRangeUmidade(@PathVariable("estacao") String codigo, @PathVariable("data1") String Data, @PathVariable("data2") String Data1){
         Query query = entityManager.createNativeQuery("select * from umidade where umi_data between '"+Data+"' and '"+Data1+"' and fk_estacao_cod_wmo = '"+codigo+"'");
+        List<Object[]> rows = query.getResultList();
+
+        List<Umidade> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Umidade(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (BigDecimal) obj[4],
+                    (BigDecimal) obj[5],
+                    (String) obj[6]
+            ));
+        }
+        return list;
+    }
+
+    //------------------------RANGE------------------------//
+    @GetMapping(value = "/umidade_min")
+    public List<Umidade> listarUmidadeMin(){
+        Query query = entityManager.createNativeQuery("SELECT * FROM umidade WHERE umi_rel_min < 10 and umi_rel_min > -5 ORDER BY umi_rel_min ASC");
         List<Object[]> rows = query.getResultList();
 
         List<Umidade> list = new ArrayList<>();
