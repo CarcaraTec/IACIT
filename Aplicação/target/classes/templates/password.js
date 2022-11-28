@@ -1,9 +1,21 @@
 const formulario = document.querySelector("form");
-const Inome = document.getElementById("inputFirstName");
-const Iemail = document.getElementById("inputEmail");
-const Isenha = document.getElementById("inputPassword");
+var Iemail = document.getElementById("inputEmail");
+var senha
+var nome
 
 function cadastrar(){
+    $(document).ready(function(){
+                $.getJSON("/usuarios",function(data){
+                    const inventory = data;
+                        function isCherries(fruit){
+                            return fruit.email === Iemail.value;
+                        }
+                        console.log(Iemail.value)
+                        var usuario = inventory.find(isCherries);
+                        senha = usuario.senha
+                        nome = usuario.nome
+                    console.log(usuario)
+
     fetch("https://hook.us1.make.com/er5uwjwos33gcy4xnci6bm3j2vvimljl",
     {
         headers: {
@@ -12,24 +24,25 @@ function cadastrar(){
         },
         method: "POST",
         body: JSON.stringify({
-            nome: Inome.value,
             email: Iemail.value,
-            senha: Isenha.value
+            nome: nome,
+            senha: senha
         })
     })
     .then(function(res) {console.log(res) })
     .catch(function(res) {console.log(res) })
+    limpar();
+    });
+                });
 };
 
 function limpar(){
-    Inome.value = "";
     Iemail.value = "";
-    Isenha.value = "";
 }
 
 formulario.addEventListener('submit', function(event){
     event.preventDefault();
 
     cadastrar();
-    limpar();
+    window.location.href("localhost:8080/login.html")
 });

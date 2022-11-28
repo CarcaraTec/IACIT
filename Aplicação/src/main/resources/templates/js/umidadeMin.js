@@ -32,9 +32,9 @@ $(document).ready(function(){
                                      prec_data.setDate(prec_data.getDate()+1);
 
                                  $("#umiEstacao"+i).prepend(esta.nome_estacao)
-                                 $("#umidadeMin"+i).prepend("Umidade Mínima: "+tempMin[i].umi_min+"°C")
-                                 $("#umidadeMax"+i).prepend("Umidade Máxima: "+tempMin[i].umi_max+"°C")
-                                 $("#UmidadeMedia"+i).prepend("Umidade Média: "+tempMin[i].umi_ar+"°C")
+                                 $("#umidadeMin"+i).prepend("Umidade Mínima: "+tempMin[i].umi_min+"%")
+                                 $("#umidadeMax"+i).prepend("Umidade Máxima: "+tempMin[i].umi_max+"%")
+                                 $("#UmidadeMedia"+i).prepend("Umidade Média: "+tempMin[i].umi_ar+"%")
                                  $("#umidadeData"+i).prepend("DATA: "+prec_data.toLocaleDateString("pt-BR"))
 
                                 const a = document.querySelector("#verDetalhesU"+i);

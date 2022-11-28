@@ -4,6 +4,7 @@ $(function() {
 const formulario = document.querySelector("unlog");
 
 function cadastrarLog(){
+
     fetch("http://localhost:8080/log",
     {
         headers: {
