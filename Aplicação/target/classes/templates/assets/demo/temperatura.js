@@ -8,14 +8,6 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
             $.getJSON("/estacoes",function(data){
                 const dado = doc.split('=');
                 const languagesSelect = document.getElementById("languages-select");
-//                var languagesList = [];
-//                for (var i = 0; i<data.length; i++){
-//                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
-//                }
-//                languagesList.forEach((language) => {
-//                  option = new Option(language, language.toLowerCase());
-//                  languagesSelect.options[languagesSelect.options.length] = option;
-//                });
                 const inventory = data;
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
@@ -31,6 +23,21 @@ $(document).ready(function(){
 
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
+
+        document.getElementById("selectEstado").innerHTML = "";
+
+                $("#selectEstado").append(inventory.find(isCherries).estado);
+
+                $(document).ready(function(){
+                    $.getJSON("/estados",function(regiao){
+                        function procurarEstado(estado) {
+                         return estado.nome_estado === inventory.find(isCherries).estado;
+                         }
+                         document.getElementById("selectRegiao").innerHTML = "";
+                         $("#selectRegiao").append(regiao.find(procurarEstado).regiao);
+
+                    });
+                    });
 
         document.getElementById('temperatura1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }

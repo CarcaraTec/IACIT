@@ -4,23 +4,15 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 
         var doc = window.location.pathname.slice(8);
-        $(document).ready(function(){
-            $.getJSON("/SE/SP",function(data){
-                const dado = doc.split('=');
-                const languagesSelect = document.getElementById("languages-select");
-//                var languagesList = [];
-//                for (var i = 0; i<data.length; i++){
-//                languagesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
-//                }
-//                languagesList.forEach((language) => {
-//                  option = new Option(language, language.toLowerCase());
-//                  languagesSelect.options[languagesSelect.options.length] = option;
-//                });
+                $(document).ready(function(){
+                    $.getJSON("/estacoes",function(data){
+                        const dado = doc.split('=');
+                        const languagesSelect = document.getElementById("languages-select");
+
                 const inventory = data;
-                function isCherries(fruit) {
-                    return fruit.codigo === dado[1];
-                }
-            console.log(dado[0])
+                                function isCherries(fruit) {
+                                    return fruit.codigo === dado[1];
+                                }
 if(dado[0]=="umidade"){
 $(document).ready(function(){
     console.log(dado[1])
@@ -32,6 +24,20 @@ $(document).ready(function(){
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
 
+        document.getElementById("selectEstado").innerHTML = "";
+
+                $("#selectEstado").append(inventory.find(isCherries).estado);
+
+                $(document).ready(function(){
+                    $.getJSON("/estados",function(regiao){
+                        function procurarEstado(estado) {
+                         return estado.nome_estado === inventory.find(isCherries).estado;
+                         }
+                         document.getElementById("selectRegiao").innerHTML = "";
+                         $("#selectRegiao").append(regiao.find(procurarEstado).regiao);
+
+                    });
+                    });
         document.getElementById('umidade1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }
 

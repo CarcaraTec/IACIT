@@ -4,54 +4,16 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 
         var doc = window.location.pathname.slice(8);
-//        var selectRegiao = document.getElementById("regioes-select").value;
-//        function selecionar(){
-//            var elem = document.getElementById("estados-select");
-//            elem.options.length = 0;
-//            $('#estados-select').append(new Option("Estado", "abc"))
-//        $(document).ready(function(){
-//          selectRegiao = document.getElementById("regioes-select").value;
-//          $.getJSON("/estados/"+selectRegiao,function(data){
-//              const dado = doc.split('=');
-//              const estadosSelect = document.getElementById("estados-select");
-//              var estadosList = [];
-//              for (var i = 0; i<data.length; i++){
-//              estadosList.push(data[i].nome_estado);
-//              }
-//              estadosList.forEach((language) => {
-//                option = new Option(language, language.toLowerCase());
-//                estadosSelect.options[estadosSelect.options.length] = option;
-//              });
-//            });
-//          });
-//          }
-//
-//          var selectEstado = 0;
-//        function selecionarEst(){
-//          var elem = document.getElementById("languages-select");
-//          elem.options.length = 0;
-//          selectEstado = document.getElementById("estados-select").value;
-//
-//          console.log("o select de regiao: "+selectRegiao)
-//          console.log("slc de estado: "+selectEstado)
-//
-//          var inventory;
-//          var dado = [];
-
-        $(document).ready(function(){
-                    $.getJSON("/SE/SP",function(data){
+                $(document).ready(function(){
+                    $.getJSON("/estacoes",function(data){
                         const dado = doc.split('=');
                         const languagesSelect = document.getElementById("languages-select");
-                        const inventory = data;
+
+        const inventory = data;
                         function isCherries(fruit) {
                             return fruit.codigo === dado[1];
                         }
 
-
-
-
-
-            console.log(dado[0])
 if(dado[0]=="pressao"){
 $(document).ready(function(){
     console.log(dado[1])
@@ -62,6 +24,21 @@ $(document).ready(function(){
 
         document.getElementById("select1").innerHTML = "";
         $("#select1").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|");
+
+        document.getElementById("selectEstado").innerHTML = "";
+
+                $("#selectEstado").append(inventory.find(isCherries).estado);
+
+                $(document).ready(function(){
+                    $.getJSON("/estados",function(regiao){
+                        function procurarEstado(estado) {
+                         return estado.nome_estado === inventory.find(isCherries).estado;
+                         }
+                         document.getElementById("selectRegiao").innerHTML = "";
+                         $("#selectRegiao").append(regiao.find(procurarEstado).regiao);
+
+                    });
+                    });
 
         document.getElementById('pressao1').className = 'btn btn-xlg btn-primary waves-effect waves-light';
     }

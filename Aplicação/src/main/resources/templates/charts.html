@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Gráficos</title>
+        <link rel="icon" href="https://thumbs2.imgbox.com/df/ce/F2WYfCpq_t.jpg">
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -127,6 +128,14 @@
         window.location.href = "charts="+dado[0]+"-mes="+dado[1]+"="+data[1];
     }
 </script>
+        <!--IMPORT SELECT2-->
+<!--        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />-->
+<!--        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
+<!--        <script>-->
+<!--        $(document).ready(function() {-->
+<!--        $(".est-select").select2();-->
+<!--        });-->
+<!--        </script>-->
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -137,9 +146,35 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Procurar..." aria-label="Procurar..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                <div class="ls-field-lg">
+<!--                    <select class="est-select" style="width:300px" id="estacoes-select">-->
+<!--                        <option id="select2" value="abc" disabled="" selected="">Procurar...</option>-->
+<!--                    </select>-->
+<!--                    <script>-->
+<!--                        $(document).ready(function(){-->
+<!--                            $.getJSON("/estacoes",function(data){-->
+<!--                                const dado = doc.split('=');-->
+<!--                                const estacoesSelect = document.getElementById("estacoes-select");-->
+<!--                                var estacoesList = [];-->
+<!--                                for (var i = 0; i<data.length; i++){-->
+<!--                                estacoesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");-->
+<!--                                }-->
+<!--                                estacoesList.forEach((estacoes) => {-->
+<!--                                  option = new Option(estacoes, estacoes.toLowerCase());-->
+<!--                                  estacoesSelect.options[estacoesSelect.options.length] = option;-->
+<!--                                });-->
+<!--                                });-->
+<!--                                });-->
+<!--                    </script>-->
+<!--                    <button class="btn btn-primary" id="btnNavbarSearch" type="button" onclick="search()"><i class="fas fa-search"></i></button>-->
+<!--                    <script>-->
+<!--                            function search(){-->
+<!--                            var estacao = document.getElementById('estacoes-select').value;-->
+<!--                            const words = estacao.split('|');-->
+<!--                            window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"=01-01-2021=31-01-2021";-->
+<!--                        }-->
+<!--                    </script>-->
+                </div>
                 </div>
             </form>
             <!-- Navbar-->
@@ -147,7 +182,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Configurações</a></li>
+                        <li><a class="dropdown-item" href="#!">Meu Perfil</a></li>
                         <li><a class="dropdown-item" href="#!">Atividades</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="#!">Logout</a></li>
@@ -349,11 +384,11 @@
                                     <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
                                 </svg></button>
                                 <label>
-                                    <button class="btn btn-sm btn-outline-secondary" onclick="verMes()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">
-                                        <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
-                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
-                                    </svg></button>
+<!--                                    <button class="btn btn-sm btn-outline-secondary" onclick="verMes()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">-->
+<!--                                        <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>-->
+<!--                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>-->
+<!--                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>-->
+<!--                                    </svg></button>-->
 
                                 </label>
                             </div>
@@ -382,12 +417,6 @@
         <script src="assets/demo/temperatura.js"></script>
         <script src="assets/demo/umidade.js"></script>
         <script src="assets/demo/vento.js"></script>
-        <script src="assets/demo/pressaoMes.js"></script>
-        <script src="assets/demo/radiacaoMes.js"></script>
-        <script src="assets/demo/temperaturaMes.js"></script>
-        <script src="assets/demo/umidadeMes.js"></script>
-        <script src="assets/demo/ventoMes.js"></script>
-        <script src="assets/demo/precipitacaoMes.js"></script>
         <script>
 			const button = document.getElementById('download-button');
             var opt = {

@@ -63,10 +63,7 @@ public class PostConnect {
     }
 
     public static void main(String[] args) throws IOException {
-        String conteudo = "teste123";
-        String Json = "{\n" +
-                "\"conteudo\": \""+conteudo+"\"\n" +
-                "}";
-        postDados("eth0gvh1bd5nx8udpt9rth9lmiuvorxc@hook.us1.make.com",Json);
+        postDados("https://hook.us1.make.com/z7lduv17h8ry5kyir8w6hpw9njrtth7a","null");
+
     }
 }

@@ -61,12 +61,10 @@ $(document).ready(function(){
                     }
                 }
             }
-            console.log(arrayVento)
 
 });
 });
 
-console.log(document.getElementById('labelHome').value)
 if(window.location.pathname == "/index.html" || window.location.pathname == "/charts.html" || document.getElementById('labelHome').value == 0){
 function deslogar(){
 window.location.href = "login.html";
@@ -94,7 +92,6 @@ $(document).ready(function(){
                                         return fruit.email === logUser.email;
                                         }
                                     var usuario = inventory.find(isCherries);
-                                    console.log(usuario)
                                     $("#nomeUsuario").append(usuario.nome);
                               });
                                           });
@@ -131,8 +128,6 @@ function logar(){
                         }
                         var usuario = inventory.find(isCherries);
                     if(usuario.senha == document.getElementById('inputPassword').value){
-                        console.log("logado")
-                        console.log(usuario)
                         nomeUsuario = usuario.nome;
                         window.location.href = "index.html";
                     }else{

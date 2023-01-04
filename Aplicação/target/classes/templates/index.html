@@ -6,12 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>Home</title>
+        <link rel="icon" href="https://thumbs2.imgbox.com/df/ce/F2WYfCpq_t.jpg">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="./css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="./unlog.js" defer></script>
+        <!--IMPORT SELECT2-->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script>
+        $(document).ready(function() {
+        $(".est-select").select2();
+        });
+        </script>
     </head>
     <style>
         .vertical {
@@ -31,9 +40,34 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Procurar..." aria-label="Procurar..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                <div class="ls-field-lg">
+                    <select class="est-select" style="width:300px" id="estacoes-select">
+                        <option id="select1" value="abc" disabled="" selected="">Procurar...</option>
+                    </select>
+                    <script>
+                        $(document).ready(function(){
+                            $.getJSON("/estacoes",function(data){
+                                const dado = doc.split('=');
+                                const estacoesSelect = document.getElementById("estacoes-select");
+                                var estacoesList = [];
+                                for (var i = 0; i<data.length; i++){
+                                estacoesList.push(data[i].nome_estacao+" - |"+data[i].codigo+"|");
+                                }
+                                estacoesList.forEach((estacoes) => {
+                                  option = new Option(estacoes, estacoes.toLowerCase());
+                                  estacoesSelect.options[estacoesSelect.options.length] = option;
+                                });
+                                });
+                                });
+                    </script>
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button" onclick="search()"><i class="fas fa-search"></i></button>
+                    <script>
+                            function search(){
+                            var estacao = document.getElementById('estacoes-select').value;
+                            const words = estacao.split('|');
+                            window.location.href = "charts=precipitacao="+words[1].toUpperCase()+"=01-01-2021=31-01-2021";
+                        }
+                    </script>
                 </div>
             </form>
             <!-- Navbar-->
@@ -41,8 +75,8 @@
                 <li id="labelHome" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Configurações</a></li>
-                        <li><a class="dropdown-item" href="#!">Atividades</a></li>
+                        <li><a class="dropdown-item" href="/perfil.html">Meu perfil</a></li>
+<!--                        <li><a class="dropdown-item" href="#!">Atividades</a></li>-->
                         <li><hr class="dropdown-divider" /></li>
                         <form name="unlog" action="">
                         <li><button class="dropdown-item" onclick="deslogar()">Logout</button></li>
@@ -50,6 +84,17 @@
                     </ul>
                 </li>
             </ul>
+        </nav>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+            </div>
+        </nav>
+
+        <nav id="configNew" class="navbar bg-light">
+            <div class="container-fluid col-1">
+                <a class="navbar-brand mb-0 h1" href="http://localhost:8080/configurações.html">FINALIZE SEU CADASTRO</a>
+            </div>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -325,7 +370,7 @@
                             <div class="col-xl-3 col-md-6">
                                 <div class="mb-2">
                                     <div class="d-grid gap-2">
-                                        <button type="button" class="btn btn-outline-info" disabled="disabled"><b>MAIS ARIDO</b></button>
+                                        <button type="button" class="btn btn-outline-info" disabled="disabled"><b>MAIS ÁRIDO</b></button>
                                     </div>
                                 </div>
                                 <div class="card bg-warning text-white mb-4">
@@ -430,29 +475,108 @@
                             <div class="col-xl-3 col-md-6">
                                 <div class="mb-2">
                                     <div class="d-grid gap-2">
-                                        <button type="button" class="btn btn-outline-info" disabled="disabled"><b>AA</b></button>
+                                        <button type="button" class="btn btn-outline-info" disabled="disabled"><b>MAIS ÚMIDO</b></button>
                                     </div>
                                 </div>
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="mb-3"></div>
-                                    <div class="mb-1" align="center"><b id="umiEstacao4"></b></div>
+                                    <div class="mb-1" align="center"><b id="umiEstacao0Maior"></b></div>
 
                                     <div class="mb-4"></div>
-                                    <div class="mb-1" id="umidadeMin4" align="center"></div>
-                                    <div class="mb-1" id="umidadeMax4" align="center"></div>
-                                    <div class="mb-1" id="UmidadeMedia4" align="center"></div>
+                                    <div class="mb-1" id="umidadeMin0Maior" align="center"></div>
+                                    <div class="mb-1" id="umidadeMax0Maior" align="center"></div>
+                                    <div class="mb-1" id="UmidadeMedia0Maior" align="center"></div>
 
 
                                     <div class="card-body" align="center"></div>
-                                    <button type="button" class="btn btn-outline-dark" align="center" disabled="disabled"><b id="umidadeData4"></b></button>
+                                    <button type="button" class="btn btn-outline-dark" align="center" disabled="disabled"><b id="umidadeData0Maior"></b></button>
 
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" id="verDetalhesU4" href="#">Ver detalhes</a>
+                                        <a class="small text-white stretched-link" id="verDetalhesU0Maior" href="#">Ver detalhes</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <div class = "vertical"></div>
+                                </div>
+
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="mb-3"></div>
+                                    <div class="mb-1" align="center"><b id="umiEstacao1Maior"></b></div>
+
+                                    <div class="mb-4"></div>
+                                    <div class="mb-1" id="umidadeMin1Maior" align="center"></div>
+                                    <div class="mb-1" id="umidadeMax1Maior" align="center"></div>
+                                    <div class="mb-1" id="UmidadeMedia1Maior" align="center"></div>
+
+
+                                    <div class="card-body" align="center"></div>
+                                    <button type="button" class="btn btn-outline-dark" align="center" disabled="disabled"><b id="umidadeData1Maior"></b></button>
+
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" id="verDetalhesU1Maior" href="#">Ver detalhes</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <div class = "vertical"></div>
+                                </div>
+
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="mb-3"></div>
+                                    <div class="mb-1" align="center"><b id="umiEstacao2Maior"></b></div>
+
+                                    <div class="mb-4"></div>
+                                    <div class="mb-1" id="umidadeMin2Maior" align="center"></div>
+                                    <div class="mb-1" id="umidadeMax2Maior" align="center"></div>
+                                    <div class="mb-1" id="UmidadeMedia2Maior" align="center"></div>
+
+
+                                    <div class="card-body" align="center"></div>
+                                    <button type="button" class="btn btn-outline-dark" align="center" disabled="disabled"><b id="umidadeData2Maior"></b></button>
+
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" id="verDetalhesU2Maior" href="#">Ver detalhes</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <div class = "vertical"></div>
+                                </div>
+
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="mb-3"></div>
+                                    <div class="mb-1" align="center"><b id="umiEstacao3Maior"></b></div>
+
+                                    <div class="mb-4"></div>
+                                    <div class="mb-1" id="umidadeMin3Maior" align="center"></div>
+                                    <div class="mb-1" id="umidadeMax3Maior" align="center"></div>
+                                    <div class="mb-1" id="UmidadeMedia3Maior" align="center"></div>
+
+
+                                    <div class="card-body" align="center"></div>
+                                    <button type="button" class="btn btn-outline-dark" align="center" disabled="disabled"><b id="umidadeData3Maior"></b></button>
+
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" id="verDetalhesU3Maior" href="#">Ver detalhes</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                    <div class = "vertical"></div>
+                                </div>
+
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="mb-3"></div>
+                                    <div class="mb-1" align="center"><b id="umiEstacao4Maior"></b></div>
+
+                                    <div class="mb-4"></div>
+                                    <div class="mb-1" id="umidadeMin4Maior" align="center"></div>
+                                    <div class="mb-1" id="umidadeMax4Maior" align="center"></div>
+                                    <div class="mb-1" id="UmidadeMedia4Maior" align="center"></div>
+
+
+                                    <div class="card-body" align="center"></div>
+                                    <button type="button" class="btn btn-outline-dark" align="center" disabled="disabled"><b id="umidadeData4Maior"></b></button>
+
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" id="verDetalhesU4Maior" href="#">Ver detalhes</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         <div class="row">
                     <!--        <div class="col-xl-6">
                                 <div class="card mb-4">
@@ -488,7 +612,9 @@
         <script src="js/temperaturaMinimo.js"></script>
         <script src="js/temperaturaMaximo.js"></script>
         <script src="js/umidadeMin.js"></script>
+        <script src="js/umidadeMax.js"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/configNew.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>

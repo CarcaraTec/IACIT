@@ -419,6 +419,27 @@ public class HomeController extends Conexao {
         return list;
     }
 
+    @GetMapping(value = "/umidade_max")
+    public List<Umidade> listarUmidadeMax(){
+        Query query = entityManager.createNativeQuery("SELECT * FROM umidade WHERE umi_rel_min > 90 ORDER BY umi_rel_min DESC");
+        List<Object[]> rows = query.getResultList();
+
+        List<Umidade> list = new ArrayList<>();
+
+        for (Object[] obj : rows) {
+            list.add(new Umidade(
+                    (Integer) obj[0],
+                    (Date) obj[1],
+                    (Date)obj[2],
+                    (BigDecimal) obj[3],
+                    (BigDecimal) obj[4],
+                    (BigDecimal) obj[5],
+                    (String) obj[6]
+            ));
+        }
+        return list;
+    }
+
     //-----------------------------------------------------------------------------------------------------------//
 
     //FILTRAR TODOS POR DATA

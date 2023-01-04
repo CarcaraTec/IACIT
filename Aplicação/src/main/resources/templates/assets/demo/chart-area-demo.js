@@ -12,8 +12,9 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 function isCherries(fruit) {
                     return fruit.codigo === dado[1];
                 }
+
             console.log(dado[0]);
-            $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")");
+            $("#teste").append(inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+" ("+dado[2]+") a ("+dado[3]+")");
             document.getElementById('select1').value = inventory.find(isCherries).nome_estacao+" - |"+dado[1]+"|"+"     ("+dado[2]+")";
             console.log(document.getElementById("languages-select").value)
 

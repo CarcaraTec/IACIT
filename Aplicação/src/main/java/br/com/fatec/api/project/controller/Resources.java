@@ -19,6 +19,12 @@ public class Resources {
         return andView;
     }
 
+    @GetMapping(value = "/perfil.html")
+    public ModelAndView perfil() {
+        ModelAndView andView = new ModelAndView("userPerfil.html");
+        return andView;
+    }
+
     @GetMapping(value = "/css/styles.css")
     public ModelAndView css() {
         ModelAndView andView = new ModelAndView("css/styles.css");
@@ -52,6 +58,18 @@ public class Resources {
     @GetMapping(value = "/js/umidadeMin.js")
     public ModelAndView umidadeMin() {
         ModelAndView andView = new ModelAndView("js/umidadeMin.js");
+        return andView;
+    }
+
+    @GetMapping(value = "/js/umidadeMax.js")
+    public ModelAndView umidadeMax() {
+        ModelAndView andView = new ModelAndView("js/umidadeMax.js");
+        return andView;
+    }
+
+    @GetMapping(value = "/js/configNew.js")
+    public ModelAndView configNew() {
+        ModelAndView andView = new ModelAndView("js/configNew.js");
         return andView;
     }
 
@@ -115,6 +133,12 @@ public class Resources {
         return andView;
     }
 
+    @GetMapping(value = "/config.js")
+    public ModelAndView configjs() {
+        ModelAndView andView = new ModelAndView("config.js");
+        return andView;
+    }
+
     @GetMapping(value = "/unlog.js")
     public ModelAndView unlogjs() {
         ModelAndView andView = new ModelAndView("unlog.js");
@@ -125,11 +149,20 @@ public class Resources {
         ModelAndView andView = new ModelAndView("password.html");
         return andView;
     }
+
+    @GetMapping(value = "/configurações.html")
+    public ModelAndView configuraçõeshtml() {
+        ModelAndView andView = new ModelAndView("configurações.html");
+        return andView;
+    }
+
     @GetMapping(value = "/password.js")
     public ModelAndView password() {
         ModelAndView andView = new ModelAndView("password.js");
         return andView;
     }
+
+
 
     @GetMapping(value = "/assets/demo/pressao.js")
     public ModelAndView pressaoarea() {
@@ -158,41 +191,6 @@ public class Resources {
     @GetMapping(value = "/assets/demo/vento.js")
     public ModelAndView ventoarea() {
         ModelAndView andView = new ModelAndView("assets/demo/vento.js");
-        return andView;
-    }
-
-    @GetMapping(value = "/assets/demo/pressaoMes.js")
-    public ModelAndView pressaoMesArea() {
-        ModelAndView andView = new ModelAndView("assets/demo/pressaoMes.js");
-        return andView;
-    }
-
-    @GetMapping(value = "/assets/demo/radiacaoMes.js")
-    public ModelAndView radiacaoMesArea() {
-        ModelAndView andView = new ModelAndView("assets/demo/radiacaoMes.js");
-        return andView;
-    }
-
-    @GetMapping(value = "/assets/demo/temperaturaMes.js")
-    public ModelAndView temperaturaMesArea() {
-        ModelAndView andView = new ModelAndView("assets/demo/temperaturaMes.js");
-        return andView;
-    }
-
-    @GetMapping(value = "/assets/demo/umidadeMes.js")
-    public ModelAndView umidadeMesArea() {
-        ModelAndView andView = new ModelAndView("assets/demo/umidadeMes.js");
-        return andView;
-    }
-
-    @GetMapping(value = "/assets/demo/ventoMes.js")
-    public ModelAndView ventoJaneiroarea() {
-        ModelAndView andView = new ModelAndView("assets/demo/ventoMes.js");
-        return andView;
-    }
-    @GetMapping(value = "/assets/demo/precipitacaoMes.js")
-    public ModelAndView precMesArea() {
-        ModelAndView andView = new ModelAndView("assets/demo/precipitacaoMes.js");
         return andView;
     }
 

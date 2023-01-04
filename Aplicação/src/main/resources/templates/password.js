@@ -16,7 +16,7 @@ function cadastrar(){
                         nome = usuario.nome
                     console.log(usuario)
 
-    fetch("https://hook.us1.make.com/er5uwjwos33gcy4xnci6bm3j2vvimljl",
+    fetch("https://hook.us1.make.com/89g4gdx7rejvtsa6xcfwnmq0ixcjz5ee",
     {
         headers: {
             'Accept': 'application/json',
